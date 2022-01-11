@@ -5,10 +5,13 @@ var foodBeingEaten: String = "Apple"
 var simpleStringsCantBeNulls: String? = null
 
 fun main() {
+    printer()
+}
+
+fun printer() {
     println(name)
     println(foodBeingEaten)
 
     foodBeingEaten = "Orange"
     println(foodBeingEaten)
-
 }
