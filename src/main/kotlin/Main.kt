@@ -5,13 +5,18 @@ var foodBeingEaten: String = "Apple"
 var simpleStringsCantBeNulls: String? = null
 
 fun main() {
-    printer()
+    greetThePlayer()
 }
 
-fun printer() {
-    println(name)
-    println(foodBeingEaten)
+fun greetThePlayer() {
+    println("Hello to the console battle simulator.")
+    println("What is your name?")
+    val playerName = readLine()
 
-    foodBeingEaten = "Orange"
-    println(foodBeingEaten)
+    println("Welcome to the CBS (console battle simulator), $playerName!")
+}
+
+
+
+fun validatedPrinter() {
 }
