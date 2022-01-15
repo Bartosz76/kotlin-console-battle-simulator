@@ -40,18 +40,27 @@ fun provideInfoAboutTheChosenSide(chosenSide: String?) {
     }
 }
 
-fun dwarvesData(): String = "You have chosen dwarves. Hardy, stubborn and strong, they field a vast array " +
-                            "of melee units with high defensive capabilities that are near impossible to break." +
-                            "The deliverance from the shortcomings of slowness and low range is to arrive at the" +
-                            "armoured hands of crossbowmen and boar riders."
+fun dwarvesData(): String =
+    """
+        You have chosen dwarves. Hardy, stubborn and strong, they field a vast array
+        of melee units with high defensive capabilities that are near impossible to break.
+        The deliverance from the shortcomings of slowness and low range is to arrive at the
+        armoured hands of crossbowmen and boar riders.
+    """.trimIndent()
 
 
-fun orcsData(): String = "You have chosen orcs. Brutal and ferocious, their rooster consists of strong and" +
-                         "fast units that seek to engage in their speciality - hand to hand combat, as soon as" +
-                         "possible. The lack of durable equipment and low morale are gaps to be filled with" +
-                         "orcs with stolen shields and shamans (whom orcs fear more than any enemy)."
+fun orcsData(): String =
+    """
+        You have chosen orcs. Brutal and ferocious, their rooster consists of strong and
+        fast units that seek to engage in their speciality - hand to hand combat, as soon as
+        possible. The lack of durable equipment and low morale are gaps to be filled with
+        orcs with stolen shields and shamans (whom orcs fear more than any enemy).
+    """.trimIndent()
 
-fun elvesData(): String = "You have chosen elves. Graceful and agile, elves specialize in ranged combat and, on a" +
-                          "perfect battlefield, will harass their opponents with constant volleys of arrows, to a" +
-                          "point where wardancers and swan pikemen, whose job is to make up for elves' shortcoming" +
-                          "in terms of melee prowess, will not be necessary."
+fun elvesData(): String =
+    """
+        You have chosen elves. Graceful and agile, elves specialize in ranged combat and, on a
+        perfect battlefield, will harass their opponents with constant volleys of arrows, to a
+        point where wardancers and swan pikemen, whose job is to make up for elves' shortcoming
+        in terms of melee prowess, will not be necessary.
+    """.trimIndent()
