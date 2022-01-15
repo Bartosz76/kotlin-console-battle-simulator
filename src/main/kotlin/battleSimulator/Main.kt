@@ -1,4 +1,5 @@
 //Variables defined outside of any enclosing function are top level variables.
+//Functions can also be defined like that.
 val name: String = "Bartosz"
 var foodBeingEaten: String = "Apple"
 //"?" is required for a variable to be a null. Types are non-null by default.
@@ -21,15 +22,20 @@ fun acquireThePlayersName() {
 }
 
 fun greetThePlayer(playerName: String?) {
+    //Below alternative to concatenation is called "String template". It allows me to substitute variable/argument
+    //values with a predefined String template.
     println("Welcome to the CBS (console battle simulator), $playerName!")
 }
 
 fun showMenu(playerName: String?) {
     println("Which side do you prefer to play as, $playerName?")
-    Thread.sleep(1_000)
+    Thread.sleep(500)
     println("1. Dwarves")
+    Thread.sleep(500)
     println("2. Orcs")
+    Thread.sleep(500)
     println("3. Elves")
+    Thread.sleep(500)
 }
 
 fun provideInfoAboutTheChosenSide(chosenSide: String?) {
@@ -39,7 +45,8 @@ fun provideInfoAboutTheChosenSide(chosenSide: String?) {
         "3" -> println(elvesData())
     }
 }
-
+//Below three functions are defined as "single expression functions". It's a substitute for defining such a method
+//within regular curvy brackets.
 fun dwarvesData(): String =
     """
         You have chosen dwarves. Hardy, stubborn and strong, they field a vast array
@@ -47,7 +54,6 @@ fun dwarvesData(): String =
         The deliverance from the shortcomings of slowness and low range is to arrive at the
         armoured hands of crossbowmen and boar riders.
     """.trimIndent()
-
 
 fun orcsData(): String =
     """
