@@ -14,6 +14,9 @@ fun main() {
     var chosenSide = readLine()
     provideInfoAboutTheChosenSide(chosenSide)
 
+    Thread.sleep(3000)
+    showArmyMenu()
+
 }
 
 fun acquireThePlayersName() {
@@ -70,3 +73,15 @@ fun elvesData(): String =
         point where wardancers and swan pikemen, whose job is to make up for elves' shortcoming
         in terms of melee prowess, will not be necessary.
     """.trimIndent()
+
+fun showArmyMenu() {
+    println("You can now:")
+    Thread.sleep(500)
+    println("1. Inspect your army.")
+    Thread.sleep(500)
+    println("2. Inspect provisions.")
+    Thread.sleep(500)
+    println("3. Train more units.")
+    Thread.sleep(500)
+    println("4. Engage the enemy.")
+}
