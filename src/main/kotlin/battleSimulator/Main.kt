@@ -1,11 +1,16 @@
+import battleSimulator.dwarves.DwarvenArmy
+
 //Variables defined outside of any enclosing function are top level variables.
 //Functions can also be defined like that.
 val name: String = "Bartosz"
 var foodBeingEaten: String = "Apple"
 //"?" is required for a variable to be a null. Types are non-null by default.
 var simpleStringsCantBeNulls: String? = null
+var chosenFaction: String? = null
+val dwarves: DwarvenArmy = DwarvenArmy()
 
 fun main() {
+
     acquireThePlayersName()
     val playerName = readLine()
     greetThePlayer(playerName)
@@ -16,7 +21,8 @@ fun main() {
 
     Thread.sleep(3000)
     showArmyMenu()
-
+    var chosenArmyAction = readLine()
+    selectArmyAction(chosenArmyAction)
 }
 
 fun acquireThePlayersName() {
@@ -43,11 +49,15 @@ fun showMenu(playerName: String?) {
 
 fun provideInfoAboutTheChosenSide(chosenSide: String?) {
     when (chosenSide) {
-        "1" -> println(dwarvesData())
-        "2" -> println(orcsData())
-        "3" -> println(elvesData())
+        "1" -> { println(dwarvesData())
+                 chosenFaction = "1" }
+        "2" -> { println(orcsData())
+                 chosenFaction = "2"}
+        "3" -> { println(elvesData())
+                 chosenFaction = "3"}
     }
 }
+
 //Below three functions are defined as "single expression functions". It's a substitute for defining such a method
 //within regular curvy brackets.
 fun dwarvesData(): String =
@@ -85,3 +95,32 @@ fun showArmyMenu() {
     Thread.sleep(500)
     println("4. Engage the enemy.")
 }
+
+fun selectArmyAction(chosenArmyAction: String?) {
+    when (chosenArmyAction) {
+        "1" -> inspectTheArmy()
+        "2" -> inspectProvisions()
+        "3" -> displayUnitTrainingPanel()
+        "4" -> displayEngagementOptions()
+    }
+}
+
+fun inspectTheArmy() {
+    when (chosenFaction) {
+        "1" ->  dwarves.showTheTroops()
+    }
+}
+
+fun inspectProvisions() {
+
+}
+
+fun displayUnitTrainingPanel() {
+
+}
+
+fun displayEngagementOptions() {
+
+}
+
+
