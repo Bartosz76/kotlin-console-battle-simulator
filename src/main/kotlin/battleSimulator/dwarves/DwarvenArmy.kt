@@ -2,13 +2,14 @@ package battleSimulator.dwarves
 
 class DwarvenArmy {
 
-    var dwarves = mutableMapOf<Int, DwarvenUnit>()
+    var dwarves = mutableMapOf<DwarvenUnit, Int>()
     init {
-        dwarves.put(4, DwarvenUnit.SHIELDBEARERS)
-        dwarves.put(2, DwarvenUnit.AXEMEN)
-        dwarves.put(3, DwarvenUnit.CROSSBOWMEN)
-        dwarves.put(1, DwarvenUnit.RUNE_PRIESTS)
+        dwarves.put(DwarvenUnit.SHIELDBEARERS, 4)
+        dwarves.put(DwarvenUnit.AXEMEN, 2)
+        dwarves.put(DwarvenUnit.CROSSBOWMEN, 3)
+        dwarves.put(DwarvenUnit.RUNE_PRIESTS, 1)
     }
+
     fun showTheTroops() {
         println(dwarves)
     }
