@@ -16,8 +16,18 @@ class DwarvenArmy {
         dwarves.put(DwarvenUnit.RUNE_PRIESTS, 1)
     }
 
+    var dwarvenSupplies = mutableMapOf<DwarvenProvisions, Int>()
+    init {
+        dwarvenSupplies.put(DwarvenProvisions.CAVE_MUSHROOMS, 2)
+        dwarvenSupplies.put(DwarvenProvisions.BREAD, 2)
+        dwarvenSupplies.put(DwarvenProvisions.BEER, 4)
+    }
+
     fun showTheTroops() {
         dwarves.forEach { key, value -> println("$value of $key") }
     }
 
+    fun showTheSupplies() {
+        dwarvenSupplies.forEach { key, value -> println("$value of $key") }
+    }
 }

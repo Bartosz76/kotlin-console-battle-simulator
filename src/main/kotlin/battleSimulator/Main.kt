@@ -52,6 +52,13 @@ fun showMenu(playerName: String?) {
     Thread.sleep(500)
 }
 
+/**
+ * Function parameters can have default values, which are used if the corresponding argument
+ * is skipped. This reduces the number of overloads. E.g. I could add 'randomNumber: Int = 6'
+ * to the below function which would add an Int parameter of a default value of 6.
+ * Overriding methods uses the same default value as the parameter of the base method. In an
+ * overriden method, the default value is not placed within the signature.
+ */
 fun provideInfoAboutTheChosenSide(chosenSide: String?) {
     when (chosenSide) {
         "1" -> { println(dwarvesData())
@@ -119,7 +126,11 @@ fun inspectTheArmy() {
 }
 
 fun inspectProvisions() {
-
+    when (chosenFaction) {
+        "1" -> dwarves.showTheSupplies()
+        "2" -> orcs.showTheSupplies()
+        "3" -> elves.showTheSupplies()
+    }
 }
 
 fun displayUnitTrainingPanel() {

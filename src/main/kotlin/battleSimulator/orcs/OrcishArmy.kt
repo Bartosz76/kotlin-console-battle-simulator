@@ -10,7 +10,18 @@ class OrcishArmy {
         orcs.put(OrcishUnit.SHAMANS, 1)
     }
 
+    var orcishSupplies = mutableMapOf<OrcishProvisions, Int>()
+    init {
+        orcishSupplies.put(OrcishProvisions.WORMS, 2)
+        orcishSupplies.put(OrcishProvisions.FLOUR_CAKE, 2)
+        orcishSupplies.put(OrcishProvisions.STOLEN_ALCOHOL, 4)
+    }
+
     fun showTheTroops() {
         orcs.forEach { key, value -> println("$value of $key") }
+    }
+
+    fun showTheSupplies() {
+        orcishSupplies.forEach { key, value -> println("$value of $key") }
     }
 }
