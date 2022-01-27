@@ -2,6 +2,7 @@ package battleSimulator.elves
 
 class ElvenArmy {
 
+    var armyFunds: Double = 100.00
     var elves = mutableMapOf<ElvenUnit, Int>()
     init {
         elves.put(ElvenUnit.WARDANCERS, 2)
@@ -23,5 +24,9 @@ class ElvenArmy {
 
     fun showTheSupplies() {
         elvenSupplies.forEach { key, value -> println("$value of $key") }
+    }
+
+    fun showTheFunds() {
+        println("You treasury holds $armyFunds emeralds.")
     }
 }

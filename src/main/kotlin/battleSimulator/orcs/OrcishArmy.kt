@@ -2,6 +2,7 @@ package battleSimulator.orcs
 
 class OrcishArmy {
 
+    var armyFunds: Double = 100.00
     var orcs = mutableMapOf<OrcishUnit, Int>()
     init {
         orcs.put(OrcishUnit.ORCS_WITH_STOLEN_SHIELDS, 3)
@@ -23,5 +24,9 @@ class OrcishArmy {
 
     fun showTheSupplies() {
         orcishSupplies.forEach { key, value -> println("$value of $key") }
+    }
+
+    fun showTheFunds() {
+        println("You treasury holds $armyFunds shinies.")
     }
 }

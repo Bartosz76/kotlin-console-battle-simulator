@@ -28,6 +28,8 @@ fun main() {
     showArmyMenu()
     var chosenArmyAction = readLine()
     selectArmyAction(chosenArmyAction)
+
+
 }
 
 fun acquireThePlayersName() {
@@ -103,17 +105,20 @@ fun showArmyMenu() {
     Thread.sleep(500)
     println("2. Inspect provisions.")
     Thread.sleep(500)
-    println("3. Train more units.")
+    println("3. Funds.")
     Thread.sleep(500)
-    println("4. Engage the enemy.")
+    println("4. Train more units.")
+    Thread.sleep(500)
+    println("5. Engage the enemy.")
 }
 
 fun selectArmyAction(chosenArmyAction: String?) {
     when (chosenArmyAction) {
         "1" -> inspectTheArmy()
         "2" -> inspectProvisions()
-        "3" -> displayUnitTrainingPanel()
-        "4" -> displayEngagementOptions()
+        "3" -> displayFundsPanel()
+        "4" -> displayUnitTrainingPanel()
+        "5" -> displayEngagementOptions()
     }
 }
 
@@ -130,6 +135,28 @@ fun inspectProvisions() {
         "1" -> dwarves.showTheSupplies()
         "2" -> orcs.showTheSupplies()
         "3" -> elves.showTheSupplies()
+    }
+}
+
+fun displayFundsPanel() {
+    println("You can now:")
+    Thread.sleep(500)
+    println("1. Inspect your funds.")
+    Thread.sleep(500)
+    println("2. Collect taxes.")
+    Thread.sleep(500)
+    println("3. Raid the enemy.")
+    var chosenOption = readLine()
+    when (chosenOption) {
+        "1" -> inspectTheFunds()
+    }
+}
+
+fun inspectTheFunds() {
+    when (chosenFaction) {
+        "1" -> dwarves.showTheFunds()
+        "2" -> orcs.showTheFunds()
+        "3" -> elves.showTheFunds()
     }
 }
 

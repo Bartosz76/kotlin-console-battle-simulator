@@ -2,6 +2,7 @@ package battleSimulator.dwarves
 
 class DwarvenArmy {
 
+    var armyFunds: Double = 100.00
     /**
      * Similar to how Kotlin differentiate between nullable and non-null types, it also differentiates
      * between mutable and immutable collection types.
@@ -29,5 +30,9 @@ class DwarvenArmy {
 
     fun showTheSupplies() {
         dwarvenSupplies.forEach { key, value -> println("$value of $key") }
+    }
+
+    fun showTheFunds() {
+        println("You treasury holds $armyFunds gold pieces.")
     }
 }
