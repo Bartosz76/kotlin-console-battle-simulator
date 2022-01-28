@@ -11,7 +11,7 @@ class Funds {
     private var orcs: OrcishArmy = OrcishArmy()
 
     fun displayFundsPanel(chosenFaction: String) {
-        println("You can now:")
+        printInitialPanelLine()
         Thread.sleep(500)
         println("1. Inspect your funds.")
         Thread.sleep(500)
@@ -21,7 +21,8 @@ class Funds {
         var chosenOption = readLine()
         when (chosenOption) {
             "1" -> inspectTheFunds(chosenFaction)
-            "2" -> collectTaxes(chosenFaction)
+            "2" -> displayTaxesPanel(chosenFaction)
+            "3" -> raidTheEnemy()
         }
     }
 
@@ -33,11 +34,31 @@ class Funds {
         }
     }
 
-    fun collectTaxes(chosenFaction: String) {
+    fun displayTaxesPanel(chosenFaction: String) {
+        printInitialPanelLine()
+        Thread.sleep(500)
+        println("1. Show population's happiness.")
+        Thread.sleep(500)
+        println("2. Collect taxes.")
+        var chosenOption = readLine()
+        when (chosenOption) {
+            "1" -> showPopulationsHappiness(chosenFaction)
+        }
+    }
+
+    fun showPopulationsHappiness(chosenFaction: String) {
         when (chosenFaction) {
             "1" -> dwarves.showPopulationHappiness()
             "2" -> orcs.showPopulationHappiness()
             "3" -> elves.showPopulationHappiness()
         }
+    }
+
+    fun raidTheEnemy() {
+
+    }
+
+    private fun printInitialPanelLine() {
+        println("You can now:")
     }
 }
