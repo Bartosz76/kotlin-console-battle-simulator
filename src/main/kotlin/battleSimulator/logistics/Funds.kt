@@ -57,12 +57,14 @@ internal class Funds {
     }
 
     private fun collectTaxes(chosenFaction: String) {
+        var taxesCollected: Double = estimateTheAmountOfTaxMoneyGathered()
+            .also { println("Managed to collect $it.") }
         when (chosenFaction) {
-            "1" -> { dwarves.changeTheStateOfTheTreasury(estimateTheAmountOfTaxMoneyGathered(), false)
+            "1" -> { dwarves.changeTheStateOfTheTreasury(taxesCollected, false)
                      dwarves.influencePopulationsHappiness(5, false) }
-            "2" -> { orcs.changeTheStateOfTheShinies(estimateTheAmountOfTaxMoneyGathered(), false)
+            "2" -> { orcs.changeTheStateOfTheShinies(taxesCollected, false)
                      orcs.influencePopulationsHappiness(5, false) }
-            "3" -> { elves.changeTheStateOfTheEmeraldStore(estimateTheAmountOfTaxMoneyGathered(), false)
+            "3" -> { elves.changeTheStateOfTheEmeraldStore(taxesCollected, false)
                      elves.influencePopulationsHappiness(5, false) }
         }
     }

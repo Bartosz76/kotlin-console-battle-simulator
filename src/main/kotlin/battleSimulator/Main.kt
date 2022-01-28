@@ -24,7 +24,6 @@ fun main() {
     var chosenArmyAction = readLine()
     selectArmyAction(chosenArmyAction, chosenFaction)
 
-
 }
 
 fun acquireThePlayersName() {
