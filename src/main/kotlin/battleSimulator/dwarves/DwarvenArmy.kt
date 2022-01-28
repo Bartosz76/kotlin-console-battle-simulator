@@ -60,14 +60,16 @@ class DwarvenArmy {
         }
     }
 
-    //TODO -> Why do I get an error 'val cannot be reassigned' when I try to modify the value of the parameter directly?
-    fun influencePopulationsHappiness(amount: Int) {
-        var value: Int = amount
-        if (value < 0) {
-            value *= -1
-            dwarfPopulationHappiness -= value
+    fun influencePopulationsHappiness(amount: Int, isPositive: Boolean) {
+        if (isPositive) {
+            if (dwarfPopulationHappiness < 50) {
+                dwarfPopulationHappiness += amount
+                if (dwarfPopulationHappiness > 50) {
+                    dwarfPopulationHappiness = 50
+                }
+            }
         } else {
-            dwarfPopulationHappiness += value
+            dwarfPopulationHappiness -= amount
         }
     }
 }

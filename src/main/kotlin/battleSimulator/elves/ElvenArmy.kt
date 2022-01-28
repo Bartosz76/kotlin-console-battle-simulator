@@ -54,13 +54,16 @@ class ElvenArmy {
         }
     }
 
-    fun influencePopulationsHappiness(amount: Int) {
-        var value: Int = amount
-        if (value < 0) {
-            value *= -1
-            elfPopulationHappiness -= value
+    fun influencePopulationsHappiness(amount: Int, isPositive: Boolean) {
+        if (isPositive) {
+            if (elfPopulationHappiness < 50) {
+                elfPopulationHappiness += amount
+                if (elfPopulationHappiness > 50) {
+                    elfPopulationHappiness = 50
+                }
+            }
         } else {
-            elfPopulationHappiness += value
+            elfPopulationHappiness -= amount
         }
     }
 }

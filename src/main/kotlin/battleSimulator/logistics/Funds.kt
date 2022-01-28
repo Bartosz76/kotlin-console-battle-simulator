@@ -26,7 +26,7 @@ class Funds {
         }
     }
 
-    fun inspectTheFunds(chosenFaction: String) {
+    private fun inspectTheFunds(chosenFaction: String) {
         when (chosenFaction) {
             "1" -> dwarves.showTheFunds()
             "2" -> orcs.showTheFunds()
@@ -34,7 +34,7 @@ class Funds {
         }
     }
 
-    fun displayTaxesPanel(chosenFaction: String) {
+    private fun displayTaxesPanel(chosenFaction: String) {
         printInitialPanelLine()
         Thread.sleep(500)
         println("1. Show population's happiness.")
@@ -47,7 +47,7 @@ class Funds {
         }
     }
 
-    fun showPopulationsHappiness(chosenFaction: String) {
+    private fun showPopulationsHappiness(chosenFaction: String) {
         when (chosenFaction) {
             "1" -> dwarves.showPopulationHappiness()
             "2" -> orcs.showPopulationHappiness()
@@ -55,15 +55,15 @@ class Funds {
         }
     }
 
-    fun collectTaxes(chosenFaction: String) {
+    private fun collectTaxes(chosenFaction: String) {
         when (chosenFaction) {
-            "1" -> dwarves.influencePopulationsHappiness(5)
-            "2" -> orcs.influencePopulationsHappiness(5)
-            "3" -> elves.influencePopulationsHappiness(5)
+            "1" -> dwarves.influencePopulationsHappiness(5, false)
+            "2" -> orcs.influencePopulationsHappiness(5, false)
+            "3" -> elves.influencePopulationsHappiness(5, false)
         }
     }
 
-    fun raidTheEnemy() {
+    private fun raidTheEnemy() {
 
     }
 
