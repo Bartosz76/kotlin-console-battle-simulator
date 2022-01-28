@@ -1,5 +1,6 @@
 import battleSimulator.dwarves.DwarvenArmy
 import battleSimulator.elves.ElvenArmy
+import battleSimulator.logistics.Funds
 import battleSimulator.orcs.OrcishArmy
 
 //Variables defined outside of any enclosing function are top level variables.
@@ -8,11 +9,12 @@ val name: String = "Bartosz"
 var foodBeingEaten: String = "Apple"
 //"?" is required for a variable to be a null. Types are non-null by default.
 var simpleStringsCantBeNulls: String? = null
-var chosenFaction: String? = null
+var chosenFaction: String = ""
 
 val dwarves: DwarvenArmy = DwarvenArmy()
 val elves: ElvenArmy = ElvenArmy()
 val orcs: OrcishArmy = OrcishArmy()
+val funds: Funds = Funds()
 
 fun main() {
 
@@ -27,7 +29,7 @@ fun main() {
     Thread.sleep(3000)
     showArmyMenu()
     var chosenArmyAction = readLine()
-    selectArmyAction(chosenArmyAction)
+    selectArmyAction(chosenArmyAction, chosenFaction)
 
 
 }
@@ -112,11 +114,11 @@ fun showArmyMenu() {
     println("5. Engage the enemy.")
 }
 
-fun selectArmyAction(chosenArmyAction: String?) {
+fun selectArmyAction(chosenArmyAction: String?, chosenFaction: String) {
     when (chosenArmyAction) {
         "1" -> inspectTheArmy()
         "2" -> inspectProvisions()
-        "3" -> displayFundsPanel()
+        "3" -> funds.displayFundsPanel(chosenFaction)
         "4" -> displayUnitTrainingPanel()
         "5" -> displayEngagementOptions()
     }
@@ -135,28 +137,6 @@ fun inspectProvisions() {
         "1" -> dwarves.showTheSupplies()
         "2" -> orcs.showTheSupplies()
         "3" -> elves.showTheSupplies()
-    }
-}
-
-fun displayFundsPanel() {
-    println("You can now:")
-    Thread.sleep(500)
-    println("1. Inspect your funds.")
-    Thread.sleep(500)
-    println("2. Collect taxes.")
-    Thread.sleep(500)
-    println("3. Raid the enemy.")
-    var chosenOption = readLine()
-    when (chosenOption) {
-        "1" -> inspectTheFunds()
-    }
-}
-
-fun inspectTheFunds() {
-    when (chosenFaction) {
-        "1" -> dwarves.showTheFunds()
-        "2" -> orcs.showTheFunds()
-        "3" -> elves.showTheFunds()
     }
 }
 
