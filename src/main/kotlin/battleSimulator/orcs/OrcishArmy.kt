@@ -53,4 +53,14 @@ class OrcishArmy {
             }
         }
     }
+
+    fun influencePopulationsHappiness(amount: Int) {
+        var value: Int = amount
+        if (value < 0) {
+            value *= -1
+            orcPopulationHappiness -= value
+        } else {
+            orcPopulationHappiness += value
+        }
+    }
 }

@@ -53,4 +53,14 @@ class ElvenArmy {
             }
         }
     }
+
+    fun influencePopulationsHappiness(amount: Int) {
+        var value: Int = amount
+        if (value < 0) {
+            value *= -1
+            elfPopulationHappiness -= value
+        } else {
+            elfPopulationHappiness += value
+        }
+    }
 }

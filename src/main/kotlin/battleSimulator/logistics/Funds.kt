@@ -43,6 +43,7 @@ class Funds {
         var chosenOption = readLine()
         when (chosenOption) {
             "1" -> showPopulationsHappiness(chosenFaction)
+            "2" -> collectTaxes(chosenFaction)
         }
     }
 
@@ -51,6 +52,14 @@ class Funds {
             "1" -> dwarves.showPopulationHappiness()
             "2" -> orcs.showPopulationHappiness()
             "3" -> elves.showPopulationHappiness()
+        }
+    }
+
+    fun collectTaxes(chosenFaction: String) {
+        when (chosenFaction) {
+            "1" -> dwarves.influencePopulationsHappiness(5)
+            "2" -> orcs.influencePopulationsHappiness(5)
+            "3" -> elves.influencePopulationsHappiness(5)
         }
     }
 
