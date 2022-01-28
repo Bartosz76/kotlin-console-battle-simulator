@@ -3,11 +3,11 @@ import battleSimulator.elves.ElvenArmy
 import battleSimulator.logistics.Funds
 import battleSimulator.orcs.OrcishArmy
 
-var chosenFaction: String = ""
-val dwarves: DwarvenArmy = DwarvenArmy()
-val elves: ElvenArmy = ElvenArmy()
-val orcs: OrcishArmy = OrcishArmy()
-val funds: Funds = Funds()
+private var chosenFaction: String = ""
+private val dwarves: DwarvenArmy = DwarvenArmy()
+private val elves: ElvenArmy = ElvenArmy()
+private val orcs: OrcishArmy = OrcishArmy()
+private val funds: Funds = Funds()
 
 fun main() {
 

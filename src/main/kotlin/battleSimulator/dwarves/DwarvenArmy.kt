@@ -26,11 +26,11 @@ class DwarvenArmy {
     }
 
     fun showTheTroops() {
-        dwarves.forEach { key, value -> println("$value of $key") }
+        dwarves.forEach { (key, value) -> println("$value of $key") }
     }
 
     fun showTheSupplies() {
-        dwarvenSupplies.forEach { key, value -> println("$value of $key") }
+        dwarvenSupplies.forEach { (key, value) -> println("$value of $key") }
     }
 
     fun showTheFunds() {

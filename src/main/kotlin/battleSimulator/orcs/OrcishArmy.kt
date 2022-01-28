@@ -20,11 +20,11 @@ class OrcishArmy {
     }
 
     fun showTheTroops() {
-        orcs.forEach { key, value -> println("$value of $key") }
+        orcs.forEach { (key, value) -> println("$value of $key") }
     }
 
     fun showTheSupplies() {
-        orcishSupplies.forEach { key, value -> println("$value of $key") }
+        orcishSupplies.forEach { (key, value) -> println("$value of $key") }
     }
 
     fun showTheFunds() {
