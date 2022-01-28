@@ -72,4 +72,12 @@ class DwarvenArmy {
             dwarfPopulationHappiness -= amount
         }
     }
+
+    fun changeTheStateOfTheTreasury(amount: Double, isAnIncrease: Boolean) {
+        if (isAnIncrease) {
+            armyFunds += amount
+        } else {
+            armyFunds -= amount
+        }
+    }
 }

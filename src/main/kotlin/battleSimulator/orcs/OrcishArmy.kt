@@ -2,7 +2,7 @@ package battleSimulator.orcs
 
 class OrcishArmy {
 
-    private var armyFunds: Double = 100.00
+    private var pileOfShinies: Double = 100.00
     private var orcPopulationHappiness: Int = 50
     private var orcs = mutableMapOf<OrcishUnit, Int>()
     init {
@@ -28,7 +28,7 @@ class OrcishArmy {
     }
 
     fun showTheFunds() {
-        println("You treasury holds $armyFunds shinies.")
+        println("You treasury holds $pileOfShinies shinies.")
     }
 
     fun showPopulationHappiness() {
@@ -64,6 +64,14 @@ class OrcishArmy {
             }
         } else {
             orcPopulationHappiness -= amount
+        }
+    }
+
+    fun changeTheStateOfTheShinies(amount: Double, isAnIncrease: Boolean) {
+        if (isAnIncrease) {
+            pileOfShinies += amount
+        } else {
+            pileOfShinies -= amount
         }
     }
 }

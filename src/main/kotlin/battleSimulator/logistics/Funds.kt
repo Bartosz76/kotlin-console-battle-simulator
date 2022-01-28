@@ -3,14 +3,15 @@ package battleSimulator.logistics
 import battleSimulator.dwarves.DwarvenArmy
 import battleSimulator.elves.ElvenArmy
 import battleSimulator.orcs.OrcishArmy
+import kotlin.random.Random
 
-class Funds {
+internal class Funds {
 
     private var dwarves: DwarvenArmy = DwarvenArmy()
     private var elves: ElvenArmy = ElvenArmy()
     private var orcs: OrcishArmy = OrcishArmy()
 
-    fun displayFundsPanel(chosenFaction: String) {
+    internal fun displayFundsPanel(chosenFaction: String) {
         printInitialPanelLine()
         Thread.sleep(500)
         println("1. Inspect your funds.")
@@ -57,10 +58,17 @@ class Funds {
 
     private fun collectTaxes(chosenFaction: String) {
         when (chosenFaction) {
-            "1" -> dwarves.influencePopulationsHappiness(5, false)
-            "2" -> orcs.influencePopulationsHappiness(5, false)
-            "3" -> elves.influencePopulationsHappiness(5, false)
+            "1" -> { dwarves.changeTheStateOfTheTreasury(estimateTheAmountOfTaxMoneyGathered(), false)
+                     dwarves.influencePopulationsHappiness(5, false) }
+            "2" -> { orcs.changeTheStateOfTheShinies(estimateTheAmountOfTaxMoneyGathered(), false)
+                     orcs.influencePopulationsHappiness(5, false) }
+            "3" -> { elves.changeTheStateOfTheEmeraldStore(estimateTheAmountOfTaxMoneyGathered(), false)
+                     elves.influencePopulationsHappiness(5, false) }
         }
+    }
+
+    private fun estimateTheAmountOfTaxMoneyGathered(): Double {
+        return Random.nextDouble(5.0, 15.0)
     }
 
     private fun raidTheEnemy() {

@@ -2,7 +2,7 @@ package battleSimulator.elves
 
 class ElvenArmy {
 
-    private var armyFunds: Double = 100.00
+    private var emeraldStore: Double = 100.00
     private var elfPopulationHappiness: Int = 50
     private var elves = mutableMapOf<ElvenUnit, Int>()
     init {
@@ -28,7 +28,7 @@ class ElvenArmy {
     }
 
     fun showTheFunds() {
-        println("You treasury holds $armyFunds emeralds.")
+        println("You treasury holds $emeraldStore emeralds.")
     }
 
     fun showPopulationHappiness() {
@@ -64,6 +64,14 @@ class ElvenArmy {
             }
         } else {
             elfPopulationHappiness -= amount
+        }
+    }
+
+    fun changeTheStateOfTheEmeraldStore(amount: Double, isAnIncrease: Boolean) {
+        if (isAnIncrease) {
+            emeraldStore += amount
+        } else {
+            emeraldStore -= amount
         }
     }
 }
