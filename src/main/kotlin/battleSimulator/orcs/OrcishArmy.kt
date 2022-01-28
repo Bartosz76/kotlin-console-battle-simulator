@@ -3,6 +3,7 @@ package battleSimulator.orcs
 class OrcishArmy {
 
     private var armyFunds: Double = 100.00
+    private var orcPopulationHappiness: Int = 50
     private var orcs = mutableMapOf<OrcishUnit, Int>()
     init {
         orcs.put(OrcishUnit.ORCS_WITH_STOLEN_SHIELDS, 3)
@@ -28,5 +29,28 @@ class OrcishArmy {
 
     fun showTheFunds() {
         println("You treasury holds $armyFunds shinies.")
+    }
+
+    fun showPopulationHappiness() {
+        when (orcPopulationHappiness) {
+            50 -> {
+                println("Orcs are content.")
+            }
+            in 40..49 -> {
+                println("Orcs are fine.")
+            }
+            in 30..39 -> {
+                println("Orcs are getting angry.")
+            }
+            in 20..29 -> {
+                println("Orcs want blood!")
+            }
+            in 10..19 -> {
+                println("Orcs are on the verge of infighting!")
+            }
+            else -> {
+                println("Orcs have risen up against the council of the clans!")
+            }
+        }
     }
 }

@@ -21,6 +21,7 @@ class Funds {
         var chosenOption = readLine()
         when (chosenOption) {
             "1" -> inspectTheFunds(chosenFaction)
+            "2" -> collectTaxes(chosenFaction)
         }
     }
 
@@ -29,6 +30,14 @@ class Funds {
             "1" -> dwarves.showTheFunds()
             "2" -> orcs.showTheFunds()
             "3" -> elves.showTheFunds()
+        }
+    }
+
+    fun collectTaxes(chosenFaction: String) {
+        when (chosenFaction) {
+            "1" -> dwarves.showPopulationHappiness()
+            "2" -> orcs.showPopulationHappiness()
+            "3" -> elves.showPopulationHappiness()
         }
     }
 }
