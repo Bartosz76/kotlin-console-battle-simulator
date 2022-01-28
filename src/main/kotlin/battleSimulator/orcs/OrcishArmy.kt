@@ -2,8 +2,8 @@ package battleSimulator.orcs
 
 class OrcishArmy {
 
-    var armyFunds: Double = 100.00
-    var orcs = mutableMapOf<OrcishUnit, Int>()
+    private var armyFunds: Double = 100.00
+    private var orcs = mutableMapOf<OrcishUnit, Int>()
     init {
         orcs.put(OrcishUnit.ORCS_WITH_STOLEN_SHIELDS, 3)
         orcs.put(OrcishUnit.CLUBBERS, 3)
@@ -11,7 +11,7 @@ class OrcishArmy {
         orcs.put(OrcishUnit.SHAMANS, 1)
     }
 
-    var orcishSupplies = mutableMapOf<OrcishProvisions, Int>()
+    private var orcishSupplies = mutableMapOf<OrcishProvisions, Int>()
     init {
         orcishSupplies.put(OrcishProvisions.WORMS, 2)
         orcishSupplies.put(OrcishProvisions.FLOUR_CAKE, 2)

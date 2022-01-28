@@ -2,8 +2,8 @@ package battleSimulator.elves
 
 class ElvenArmy {
 
-    var armyFunds: Double = 100.00
-    var elves = mutableMapOf<ElvenUnit, Int>()
+    private var armyFunds: Double = 100.00
+    private var elves = mutableMapOf<ElvenUnit, Int>()
     init {
         elves.put(ElvenUnit.WARDANCERS, 2)
         elves.put(ElvenUnit.HUNTERS, 4)
@@ -11,7 +11,7 @@ class ElvenArmy {
         elves.put(ElvenUnit.PRIESTS_OF_HALIEL, 1)
     }
 
-    var elvenSupplies = mutableMapOf<ElvenProvisions, Int>()
+    private var elvenSupplies = mutableMapOf<ElvenProvisions, Int>()
     init {
         elvenSupplies.put(ElvenProvisions.FOREST_MUSHROOMS, 2)
         elvenSupplies.put(ElvenProvisions.CAKE, 2)
