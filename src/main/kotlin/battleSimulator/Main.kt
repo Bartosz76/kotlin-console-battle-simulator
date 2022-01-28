@@ -3,14 +3,7 @@ import battleSimulator.elves.ElvenArmy
 import battleSimulator.logistics.Funds
 import battleSimulator.orcs.OrcishArmy
 
-//Variables defined outside of any enclosing function are top level variables.
-//Functions can also be defined like that.
-val name: String = "Bartosz"
-var foodBeingEaten: String = "Apple"
-//"?" is required for a variable to be a null. Types are non-null by default.
-var simpleStringsCantBeNulls: String? = null
 var chosenFaction: String = ""
-
 val dwarves: DwarvenArmy = DwarvenArmy()
 val elves: ElvenArmy = ElvenArmy()
 val orcs: OrcishArmy = OrcishArmy()
