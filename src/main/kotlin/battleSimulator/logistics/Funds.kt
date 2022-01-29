@@ -23,7 +23,7 @@ internal class Funds {
         when (chosenOption) {
             "1" -> inspectTheFunds(chosenFaction)
             "2" -> displayTaxesPanel(chosenFaction)
-            "3" -> raidTheEnemy()
+            "3" -> raidTheEnemy(chosenFaction)
         }
     }
 
@@ -41,10 +41,13 @@ internal class Funds {
         println("1. Show population's happiness.")
         Thread.sleep(500)
         println("2. Collect taxes.")
+        Thread.sleep(500)
+        println("3. Raid the enemy's supply lines.")
         var chosenOption = readLine()
         when (chosenOption) {
             "1" -> showPopulationsHappiness(chosenFaction)
             "2" -> collectTaxes(chosenFaction)
+            "3" -> raidTheEnemy(chosenFaction)
         }
     }
 
@@ -73,8 +76,33 @@ internal class Funds {
         return Random.nextDouble(5.0, 15.0)
     }
 
-    private fun raidTheEnemy() {
+    private fun raidTheEnemy(chosenFaction: String) {
+        val wasThwarted = seeIfTheRaidWasSuccessful()
+        val raidResult: Double = estimateTheAmountOfLootGathered(wasThwarted)
+            .also { if (!wasThwarted) { println("Managed to loot $it!") }
+                    else { println("The raid was thwarted and you lost $it!") } }
+        when (chosenFaction) {
+            "1" -> { dwarves.changeTheStateOfTheTreasury(raidResult, !wasThwarted) }
+            "2" -> { orcs.changeTheStateOfTheShinies(raidResult, !wasThwarted)}
+            "3" -> { elves.changeTheStateOfTheEmeraldStore(raidResult, !wasThwarted)}
+        }
+    }
 
+    private fun estimateTheAmountOfLootGathered(wasThwarted: Boolean): Double {
+        return if (!wasThwarted) {
+            Random.nextDouble(3.0, 25.0)
+        } else {
+            Random.nextDouble(3.0, 10.0)
+        }
+    }
+
+    private fun seeIfTheRaidWasSuccessful(): Boolean {
+        var wasThwarted = false
+        val chance: Int = Random.nextInt(0, 10)
+        if (chance < 5) {
+            wasThwarted = true
+        }
+        return wasThwarted
     }
 
     private fun printInitialPanelLine() {
