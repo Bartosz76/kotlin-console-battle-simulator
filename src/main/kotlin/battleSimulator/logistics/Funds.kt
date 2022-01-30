@@ -82,9 +82,12 @@ internal class Funds {
             .also { if (!wasThwarted) { println("Managed to loot $it!") }
                     else { println("The raid was thwarted and you lost $it!") } }
         when (chosenFaction) {
-            "1" -> { dwarves.changeTheStateOfTheTreasury(raidResult, !wasThwarted) }
-            "2" -> { orcs.changeTheStateOfTheShinies(raidResult, !wasThwarted)}
-            "3" -> { elves.changeTheStateOfTheEmeraldStore(raidResult, !wasThwarted)}
+            "1" -> { dwarves.changeTheStateOfTheTreasury(raidResult, !wasThwarted)
+                     dwarves.influencePopulationsHappiness(5, !wasThwarted) }
+            "2" -> { orcs.changeTheStateOfTheShinies(raidResult, !wasThwarted)
+                     orcs.influencePopulationsHappiness(5, !wasThwarted) }
+            "3" -> { elves.changeTheStateOfTheEmeraldStore(raidResult, !wasThwarted)
+                     elves.influencePopulationsHappiness(5, !wasThwarted) }
         }
     }
 
