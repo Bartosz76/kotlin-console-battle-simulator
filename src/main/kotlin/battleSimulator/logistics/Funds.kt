@@ -5,7 +5,7 @@ import battleSimulator.elves.ElvenArmy
 import battleSimulator.orcs.OrcishArmy
 import kotlin.random.Random
 
-internal class Funds {
+internal class Funds: Logistics {
 
     private var dwarves: DwarvenArmy = DwarvenArmy()
     private var elves: ElvenArmy = ElvenArmy()
@@ -108,7 +108,7 @@ internal class Funds {
         return wasThwarted
     }
 
-    private fun printInitialPanelLine() {
+    override fun printInitialPanelLine() {
         println("You can now:")
     }
 }
