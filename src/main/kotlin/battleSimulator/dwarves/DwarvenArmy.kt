@@ -25,19 +25,19 @@ class DwarvenArmy {
         dwarvenSupplies.put(DwarvenProvisions.BEER, 4)
     }
 
-    fun showTheTroops() {
+    internal fun showTheTroops() {
         dwarves.forEach { (key, value) -> println("$value of $key") }
     }
 
-    fun showTheSupplies() {
+    internal fun showTheSupplies() {
         dwarvenSupplies.forEach { (key, value) -> println("$value of $key") }
     }
 
-    fun showTheFunds() {
+    internal fun showTheFunds() {
         println("You treasury holds $armyFunds gold pieces.")
     }
 
-    fun showPopulationHappiness() {
+    internal fun showPopulationHappiness() {
         when (dwarfPopulationHappiness) {
             50 -> {
                 println("Dwarves are happy.")
@@ -60,7 +60,7 @@ class DwarvenArmy {
         }
     }
 
-    fun influencePopulationsHappiness(amount: Int, isPositive: Boolean) {
+    internal fun influencePopulationsHappiness(amount: Int, isPositive: Boolean) {
         if (isPositive) {
             if (dwarfPopulationHappiness < 50) {
                 dwarfPopulationHappiness += amount
@@ -73,11 +73,30 @@ class DwarvenArmy {
         }
     }
 
-    fun changeTheStateOfTheTreasury(amount: Double, isAnIncrease: Boolean) {
+    internal fun changeTheStateOfTheTreasury(amount: Double, isAnIncrease: Boolean) {
         if (isAnIncrease) {
             armyFunds += amount
         } else {
             armyFunds -= amount
         }
+    }
+
+    internal fun showAvailableUnitsWithCost() {
+        println("You can train:")
+        Thread.sleep(500)
+        println("1. " + DwarvenUnit.SHIELDBEARERS.name + " for 8 gold pieces each.")
+        Thread.sleep(500)
+        println("2. " + DwarvenUnit.AXEMEN.name + " for 6 gold pieces each.")
+        Thread.sleep(500)
+        println("3. " + DwarvenUnit.HAMMERERS.name + " for 10 gold pieces each.")
+        Thread.sleep(500)
+        println("4. " + DwarvenUnit.AXETHROWERS.name + " for 9 gold pieces each.")
+        Thread.sleep(500)
+        println("5. " + DwarvenUnit.CROSSBOWMEN.name + " for 12 gold pieces each.")
+        Thread.sleep(500)
+        println("6. " + DwarvenUnit.BOAR_RIDERS.name + " for 15 gold pieces each.")
+        Thread.sleep(500)
+        println("7. " + DwarvenUnit.RUNE_PRIESTS.name + " for 20 gold pieces each.")
+        var chosenOption = readLine()
     }
 }

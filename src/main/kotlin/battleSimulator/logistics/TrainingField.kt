@@ -25,8 +25,17 @@ internal class TrainingField: Logistics {
                 "2" -> orcs.showTheTroops()
                 "3" -> elves.showTheTroops()
             } }
-            "2" -> {  }
+            "2" -> displayTrainingOptions(chosenFaction)
             "3" -> {  }
+        }
+    }
+
+    private fun displayTrainingOptions(chosenFaction: String) {
+        println("You can train following units:")
+        when (chosenFaction) {
+            "1" -> { dwarves.showAvailableUnitsWithCost() }
+            "2" -> {}
+            "3" -> {}
         }
     }
 
