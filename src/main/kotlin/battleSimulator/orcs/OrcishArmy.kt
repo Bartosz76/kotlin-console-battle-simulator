@@ -74,4 +74,22 @@ class OrcishArmy {
             pileOfShinies -= amount
         }
     }
+
+    internal fun showAvailableUnitsWithCost() {
+        Thread.sleep(500)
+        println("1. " + OrcishUnit.ORCS_WITH_STOLEN_SHIELDS.name + " for 4 gold pieces each.")
+        Thread.sleep(500)
+        println("2. " + OrcishUnit.CLUBBERS.name + " for 3 gold pieces each.")
+        Thread.sleep(500)
+        println("3. " + OrcishUnit.BIG_AXES.name + " for 6 gold pieces each.")
+        Thread.sleep(500)
+        println("4. " + OrcishUnit.ROCK_LOBBERS.name + " for 7 gold pieces each.")
+        Thread.sleep(500)
+        println("5. " + OrcishUnit.JAVELINERS.name + " for 9 gold pieces each.")
+        Thread.sleep(500)
+        println("6. " + OrcishUnit.WOLF_RIDERS.name + " for 10 gold pieces each.")
+        Thread.sleep(500)
+        println("7. " + OrcishUnit.SHAMANS.name + " for 12 gold pieces each.")
+        var chosenOption = readLine()
+    }
 }

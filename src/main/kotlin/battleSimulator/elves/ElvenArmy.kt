@@ -74,4 +74,22 @@ class ElvenArmy {
             emeraldStore -= amount
         }
     }
+
+    internal fun showAvailableUnitsWithCost() {
+        Thread.sleep(500)
+        println("1. " + ElvenUnit.WARDANCERS.name + " for 4 gold pieces each.")
+        Thread.sleep(500)
+        println("2. " + ElvenUnit.SWAN_PIKEMEN.name + " for 5 gold pieces each.")
+        Thread.sleep(500)
+        println("3. " + ElvenUnit.HUNTERS.name + " for 10 gold pieces each.")
+        Thread.sleep(500)
+        println("4. " + ElvenUnit.LONGBOWS.name + " for 10 gold pieces each.")
+        Thread.sleep(500)
+        println("5. " + ElvenUnit.ARCANE_BOWS.name + " for 14 gold pieces each.")
+        Thread.sleep(500)
+        println("6. " + ElvenUnit.SWAN_KNIGHTS.name + " for 15 gold pieces each.")
+        Thread.sleep(500)
+        println("7. " + ElvenUnit.PRIESTS_OF_HALIEL.name + " for 20 gold pieces each.")
+        var chosenOption = readLine()
+    }
 }

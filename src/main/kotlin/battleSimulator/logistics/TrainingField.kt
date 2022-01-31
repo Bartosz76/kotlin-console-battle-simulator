@@ -34,8 +34,8 @@ internal class TrainingField: Logistics {
         println("You can train following units:")
         when (chosenFaction) {
             "1" -> { dwarves.showAvailableUnitsWithCost() }
-            "2" -> {}
-            "3" -> {}
+            "2" -> { orcs.showAvailableUnitsWithCost() }
+            "3" -> { elves.showAvailableUnitsWithCost() }
         }
     }
 

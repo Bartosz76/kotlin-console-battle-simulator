@@ -82,7 +82,6 @@ class DwarvenArmy {
     }
 
     internal fun showAvailableUnitsWithCost() {
-        println("You can train:")
         Thread.sleep(500)
         println("1. " + DwarvenUnit.SHIELDBEARERS.name + " for 8 gold pieces each.")
         Thread.sleep(500)
