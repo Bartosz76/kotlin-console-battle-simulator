@@ -28,18 +28,18 @@ fun main() {
 
 }
 
-fun acquireThePlayersName() {
+internal fun acquireThePlayersName() {
     println("Hello to the console battle simulator.")
     println("What is your name?")
 }
 
-fun greetThePlayer(playerName: String?) {
+internal fun greetThePlayer(playerName: String?) {
     //Below alternative to concatenation is called "String template". It allows me to substitute variable/argument
     //values with a predefined String template.
     println("Welcome to the CBS (console battle simulator), $playerName!")
 }
 
-fun showMenu(playerName: String?) {
+internal fun showMenu(playerName: String?) {
     println("Which side do you prefer to play as, $playerName?")
     Thread.sleep(500)
     println("1. Dwarves")
@@ -57,7 +57,7 @@ fun showMenu(playerName: String?) {
  * Overriding methods uses the same default value as the parameter of the base method. In an
  * overriden method, the default value is not placed within the signature.
  */
-fun provideInfoAboutTheChosenSide(chosenSide: String?) {
+internal fun provideInfoAboutTheChosenSide(chosenSide: String?) {
     when (chosenSide) {
         "1" -> { println(dwarvesData())
                  chosenFaction = "1" }
@@ -70,7 +70,7 @@ fun provideInfoAboutTheChosenSide(chosenSide: String?) {
 
 //Below three functions are defined as "single expression functions". It's a substitute for defining such a method
 //within regular curvy brackets.
-fun dwarvesData(): String =
+internal fun dwarvesData(): String =
     """
         You have chosen dwarves. Hardy, stubborn and strong, they field a vast array
         of melee units with high defensive capabilities that are near impossible to break.
@@ -78,7 +78,7 @@ fun dwarvesData(): String =
         armoured hands of crossbowmen and boar riders.
     """.trimIndent()
 
-fun orcsData(): String =
+internal fun orcsData(): String =
     """
         You have chosen orcs. Brutal and ferocious, their rooster consists of strong and
         fast units that seek to engage in their speciality - hand to hand combat, as soon as
@@ -86,7 +86,7 @@ fun orcsData(): String =
         orcs with stolen shields and shamans (whom orcs fear more than any enemy).
     """.trimIndent()
 
-fun elvesData(): String =
+internal fun elvesData(): String =
     """
         You have chosen elves. Graceful and agile, elves specialize in ranged combat and, on a
         perfect battlefield, will harass their opponents with constant volleys of arrows, to a
@@ -94,7 +94,7 @@ fun elvesData(): String =
         in terms of melee prowess, will not be necessary.
     """.trimIndent()
 
-fun showArmyMenu() {
+internal fun showArmyMenu() {
     println("You can now:")
     Thread.sleep(500)
     println("1. Inspect your army.")
@@ -108,7 +108,7 @@ fun showArmyMenu() {
     println("5. Engage the enemy.")
 }
 
-fun selectArmyAction(chosenArmyAction: String?, chosenFaction: String) {
+internal fun selectArmyAction(chosenArmyAction: String?, chosenFaction: String) {
     when (chosenArmyAction) {
         "1" -> inspectTheArmy()
         "2" -> inspectProvisions()
@@ -118,7 +118,7 @@ fun selectArmyAction(chosenArmyAction: String?, chosenFaction: String) {
     }
 }
 
-fun inspectTheArmy() {
+internal fun inspectTheArmy() {
     when (chosenFaction) {
         "1" -> dwarves.showTheTroops()
         "2" -> orcs.showTheTroops()
@@ -126,7 +126,7 @@ fun inspectTheArmy() {
     }
 }
 
-fun inspectProvisions() {
+internal fun inspectProvisions() {
     when (chosenFaction) {
         "1" -> dwarves.showTheSupplies()
         "2" -> orcs.showTheSupplies()

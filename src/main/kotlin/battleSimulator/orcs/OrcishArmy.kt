@@ -19,19 +19,19 @@ class OrcishArmy {
         orcishSupplies.put(OrcishProvisions.STOLEN_ALCOHOL, 4)
     }
 
-    fun showTheTroops() {
+    internal fun showTheTroops() {
         orcs.forEach { (key, value) -> println("$value of $key") }
     }
 
-    fun showTheSupplies() {
+    internal fun showTheSupplies() {
         orcishSupplies.forEach { (key, value) -> println("$value of $key") }
     }
 
-    fun showTheFunds() {
+    internal fun showTheFunds() {
         println("You treasury holds $pileOfShinies shinies.")
     }
 
-    fun showPopulationHappiness() {
+    internal fun showPopulationHappiness() {
         when (orcPopulationHappiness) {
             50 -> {
                 println("Orcs are content.")
@@ -54,7 +54,7 @@ class OrcishArmy {
         }
     }
 
-    fun influencePopulationsHappiness(amount: Int, isPositive: Boolean) {
+    internal fun influencePopulationsHappiness(amount: Int, isPositive: Boolean) {
         if (isPositive) {
             if (orcPopulationHappiness < 50) {
                 orcPopulationHappiness += amount
@@ -67,7 +67,7 @@ class OrcishArmy {
         }
     }
 
-    fun changeTheStateOfTheShinies(amount: Double, isAnIncrease: Boolean) {
+    internal fun changeTheStateOfTheShinies(amount: Double, isAnIncrease: Boolean) {
         if (isAnIncrease) {
             pileOfShinies += amount
         } else {

@@ -19,19 +19,19 @@ class ElvenArmy {
         elvenSupplies.put(ElvenProvisions.WINE, 4)
     }
 
-    fun showTheTroops() {
+    internal fun showTheTroops() {
         elves.forEach { (key, value) -> println("$value of $key") }
     }
 
-    fun showTheSupplies() {
+    internal fun showTheSupplies() {
         elvenSupplies.forEach { (key, value) -> println("$value of $key") }
     }
 
-    fun showTheFunds() {
+    internal fun showTheFunds() {
         println("You treasury holds $emeraldStore emeralds.")
     }
 
-    fun showPopulationHappiness() {
+    internal fun showPopulationHappiness() {
         when (elfPopulationHappiness) {
             50 -> {
                 println("Elves are pleased.")
@@ -54,7 +54,7 @@ class ElvenArmy {
         }
     }
 
-    fun influencePopulationsHappiness(amount: Int, isPositive: Boolean) {
+    internal fun influencePopulationsHappiness(amount: Int, isPositive: Boolean) {
         if (isPositive) {
             if (elfPopulationHappiness < 50) {
                 elfPopulationHappiness += amount
@@ -67,7 +67,7 @@ class ElvenArmy {
         }
     }
 
-    fun changeTheStateOfTheEmeraldStore(amount: Double, isAnIncrease: Boolean) {
+    internal fun changeTheStateOfTheEmeraldStore(amount: Double, isAnIncrease: Boolean) {
         if (isAnIncrease) {
             emeraldStore += amount
         } else {
