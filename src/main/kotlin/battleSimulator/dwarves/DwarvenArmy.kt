@@ -97,5 +97,100 @@ class DwarvenArmy {
         Thread.sleep(500)
         println("7. " + DwarvenUnit.RUNE_PRIESTS.name + " for 20 gold pieces each.")
         var chosenOption = readLine()
+        trainADwarvenUnit(chosenOption)
+    }
+
+    private fun trainADwarvenUnit(chosenOption: String?) {
+        when (chosenOption) {
+            "1" -> { if (checkIfFundsAreSufficient(8.0)) {
+                        if (dwarves.containsKey(DwarvenUnit.SHIELDBEARERS)) {
+                            dwarves.put(DwarvenUnit.SHIELDBEARERS, dwarves.getValue(DwarvenUnit.SHIELDBEARERS) + 1)
+                        } else {
+                            dwarves.put(DwarvenUnit.SHIELDBEARERS, 1)
+                        }
+                        changeTheStateOfTheTreasury(8.0, false)
+                        confirmThePurchase(DwarvenUnit.SHIELDBEARERS)
+                     } else {
+                        declineThePurchase(DwarvenUnit.SHIELDBEARERS)
+                     } }
+            "2" -> { if (checkIfFundsAreSufficient(6.0)) {
+                        if (dwarves.containsKey(DwarvenUnit.AXEMEN)) {
+                            dwarves.put(DwarvenUnit.AXEMEN, dwarves.getValue(DwarvenUnit.AXEMEN) + 1)
+                        } else {
+                            dwarves.put(DwarvenUnit.AXEMEN, 1)
+                        }
+                        changeTheStateOfTheTreasury(6.0, false)
+                        confirmThePurchase(DwarvenUnit.AXEMEN)
+                    } else {
+                        declineThePurchase(DwarvenUnit.AXEMEN)
+                    } }
+            "3" -> { if (checkIfFundsAreSufficient(10.0)) {
+                        if (dwarves.containsKey(DwarvenUnit.HAMMERERS)) {
+                            dwarves.put(DwarvenUnit.HAMMERERS, dwarves.getValue(DwarvenUnit.HAMMERERS) + 1)
+                        } else {
+                            dwarves.put(DwarvenUnit.HAMMERERS, 1)
+                        }
+                        changeTheStateOfTheTreasury(10.0, false)
+                        confirmThePurchase(DwarvenUnit.HAMMERERS)
+                    } else {
+                        declineThePurchase(DwarvenUnit.HAMMERERS)
+                    } }
+            "4" -> { if (checkIfFundsAreSufficient(9.0)) {
+                        if (dwarves.containsKey(DwarvenUnit.AXETHROWERS)) {
+                            dwarves.put(DwarvenUnit.AXETHROWERS, dwarves.getValue(DwarvenUnit.AXETHROWERS) + 1)
+                        } else {
+                            dwarves.put(DwarvenUnit.AXETHROWERS, 1)
+                        }
+                        changeTheStateOfTheTreasury(9.0, false)
+                        confirmThePurchase(DwarvenUnit.AXETHROWERS)
+                    } else {
+                        declineThePurchase(DwarvenUnit.AXETHROWERS)
+                    } }
+            "5" -> { if (checkIfFundsAreSufficient(12.0)) {
+                        if (dwarves.containsKey(DwarvenUnit.CROSSBOWMEN)) {
+                            dwarves.put(DwarvenUnit.CROSSBOWMEN, dwarves.getValue(DwarvenUnit.CROSSBOWMEN) + 1)
+                        } else {
+                            dwarves.put(DwarvenUnit.CROSSBOWMEN, 1)
+                        }
+                        changeTheStateOfTheTreasury(12.0, false)
+                        confirmThePurchase(DwarvenUnit.CROSSBOWMEN)
+                    } else {
+                        declineThePurchase(DwarvenUnit.CROSSBOWMEN)
+                    } }
+            "6" -> { if (checkIfFundsAreSufficient(15.0)) {
+                        if (dwarves.containsKey(DwarvenUnit.BOAR_RIDERS)) {
+                            dwarves.put(DwarvenUnit.BOAR_RIDERS, dwarves.getValue(DwarvenUnit.BOAR_RIDERS) + 1)
+                        } else {
+                            dwarves.put(DwarvenUnit.BOAR_RIDERS, 1)
+                        }
+                        changeTheStateOfTheTreasury(15.0, false)
+                        confirmThePurchase(DwarvenUnit.BOAR_RIDERS)
+                    } else {
+                        declineThePurchase(DwarvenUnit.BOAR_RIDERS)
+                    } }
+            "7" -> { if (checkIfFundsAreSufficient(20.0)) {
+                        if (dwarves.containsKey(DwarvenUnit.RUNE_PRIESTS)) {
+                            dwarves.put(DwarvenUnit.RUNE_PRIESTS, dwarves.getValue(DwarvenUnit.RUNE_PRIESTS) + 1)
+                        } else {
+                            dwarves.put(DwarvenUnit.RUNE_PRIESTS, 1)
+                        }
+                        changeTheStateOfTheTreasury(20.0, false)
+                        confirmThePurchase(DwarvenUnit.RUNE_PRIESTS)
+                    } else {
+                        declineThePurchase(DwarvenUnit.RUNE_PRIESTS)
+                    } }
+        }
+    }
+
+    private fun checkIfFundsAreSufficient(requiredAmount: Double): Boolean {
+        return armyFunds > requiredAmount
+    }
+
+    private fun declineThePurchase(chosenUnit: DwarvenUnit) {
+        println("You do not have enough funds to train ${chosenUnit.name}.")
+    }
+
+    private fun confirmThePurchase(chosenUnit: DwarvenUnit) {
+        println("A unit of ${chosenUnit.name} was added to the army!")
     }
 }
