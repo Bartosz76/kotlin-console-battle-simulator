@@ -18,12 +18,12 @@ fun main() {
     greetThePlayer(playerName)
 
     showMenu(playerName)
-    var chosenSide = readLine()
+    val chosenSide = readLine()
     provideInfoAboutTheChosenSide(chosenSide)
 
     Thread.sleep(3000)
     showArmyMenu()
-    var chosenArmyAction = readLine()
+    val chosenArmyAction = readLine()
     selectArmyAction(chosenArmyAction, chosenFaction)
 
 }

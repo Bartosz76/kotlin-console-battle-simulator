@@ -90,6 +90,6 @@ class OrcishArmy {
         println("6. " + OrcishUnit.WOLF_RIDERS.name + " for 10 gold pieces each.")
         Thread.sleep(500)
         println("7. " + OrcishUnit.SHAMANS.name + " for 12 gold pieces each.")
-        var chosenOption = readLine()
+        val chosenOption = readLine()
     }
 }

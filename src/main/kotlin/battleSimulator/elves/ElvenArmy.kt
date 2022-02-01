@@ -90,6 +90,6 @@ class ElvenArmy {
         println("6. " + ElvenUnit.SWAN_KNIGHTS.name + " for 15 gold pieces each.")
         Thread.sleep(500)
         println("7. " + ElvenUnit.PRIESTS_OF_HALIEL.name + " for 20 gold pieces each.")
-        var chosenOption = readLine()
+        val chosenOption = readLine()
     }
 }

@@ -19,7 +19,7 @@ internal class Funds: Logistics {
         println("2. Collect taxes.")
         Thread.sleep(500)
         println("3. Raid the enemy.")
-        var chosenOption = readLine()
+        val chosenOption = readLine()
         when (chosenOption) {
             "1" -> inspectTheFunds(chosenFaction)
             "2" -> displayTaxesPanel(chosenFaction)
@@ -43,7 +43,7 @@ internal class Funds: Logistics {
         println("2. Collect taxes.")
         Thread.sleep(500)
         println("3. Raid the enemy's supply lines.")
-        var chosenOption = readLine()
+        val chosenOption = readLine()
         when (chosenOption) {
             "1" -> showPopulationsHappiness(chosenFaction)
             "2" -> collectTaxes(chosenFaction)
@@ -60,7 +60,7 @@ internal class Funds: Logistics {
     }
 
     private fun collectTaxes(chosenFaction: String) {
-        var taxesCollected: Double = estimateTheAmountOfTaxMoneyGathered()
+        val taxesCollected: Double = estimateTheAmountOfTaxMoneyGathered()
             .also { println("Managed to collect $it.") }
         when (chosenFaction) {
             "1" -> { dwarves.changeTheStateOfTheTreasury(taxesCollected, false)

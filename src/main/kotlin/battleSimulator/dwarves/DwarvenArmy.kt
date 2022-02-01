@@ -96,7 +96,7 @@ class DwarvenArmy {
         println("6. " + DwarvenUnit.BOAR_RIDERS.name + " for 15 gold pieces each.")
         Thread.sleep(500)
         println("7. " + DwarvenUnit.RUNE_PRIESTS.name + " for 20 gold pieces each.")
-        var chosenOption = readLine()
+        val chosenOption = readLine()
         trainADwarvenUnit(chosenOption)
     }
 
