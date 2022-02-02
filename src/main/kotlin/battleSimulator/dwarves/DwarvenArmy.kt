@@ -1,6 +1,9 @@
 package battleSimulator.dwarves
 
-class DwarvenArmy {
+import battleSimulator.logistics.Army
+import battleSimulator.logistics.Unit
+
+class DwarvenArmy: Army {
 
     private var armyFunds: Double = 100.00
     private var dwarfPopulationHappiness: Int = 50
@@ -182,15 +185,15 @@ class DwarvenArmy {
         }
     }
 
-    fun checkIfFundsAreSufficient(requiredAmount: Double): Boolean {
+    override fun checkIfFundsAreSufficient(requiredAmount: Double): Boolean {
         return armyFunds > requiredAmount
     }
 
-    private fun declineThePurchase(chosenUnit: DwarvenUnit) {
-        println("You do not have enough funds to train ${chosenUnit.name}.")
+    override fun declineThePurchase(chosenUnit: Unit) {
+        println("You do not have enough funds to train $chosenUnit.")
     }
 
-    private fun confirmThePurchase(chosenUnit: DwarvenUnit) {
-        println("A unit of ${chosenUnit.name} was added to the army!")
+    override fun confirmThePurchase(chosenUnit: Unit) {
+        println("A unit of $chosenUnit was added to the army!")
     }
 }
