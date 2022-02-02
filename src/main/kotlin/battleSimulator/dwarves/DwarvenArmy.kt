@@ -182,7 +182,7 @@ class DwarvenArmy {
         }
     }
 
-    private fun checkIfFundsAreSufficient(requiredAmount: Double): Boolean {
+    fun checkIfFundsAreSufficient(requiredAmount: Double): Boolean {
         return armyFunds > requiredAmount
     }
 

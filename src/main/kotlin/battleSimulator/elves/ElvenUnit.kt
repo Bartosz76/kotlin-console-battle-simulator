@@ -1,6 +1,8 @@
 package battleSimulator.elves
 
-enum class ElvenUnit(var power: Int, var defence: Int, var number: Int, var healthPool: Int ) {
+import battleSimulator.logistics.Unit
+
+enum class ElvenUnit(var power: Int, var defence: Int, var number: Int, var healthPool: Int): Unit {
 
     WARDANCERS(90, 100, 80, 250),
     SWAN_PIKEMEN(110, 100, 80, 200),

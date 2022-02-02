@@ -1,5 +1,8 @@
 package battleSimulator.orcs
 
+import battleSimulator.logistics.Army
+import battleSimulator.logistics.Unit
+
 class OrcishArmy {
 
     private var pileOfShinies: Double = 100.00
