@@ -22,19 +22,19 @@ class OrcishArmy: Army {
         orcishSupplies.put(OrcishProvisions.STOLEN_ALCOHOL, 4)
     }
 
-    internal fun showTheTroops() {
+    override fun showTheTroops() {
         orcs.forEach { (key, value) -> println("$value of $key") }
     }
 
-    internal fun showTheSupplies() {
+    override fun showTheSupplies() {
         orcishSupplies.forEach { (key, value) -> println("$value of $key") }
     }
 
-    internal fun showTheFunds() {
+    override fun showTheFunds() {
         println("You treasury holds $pileOfShinies shinies.")
     }
 
-    internal fun showPopulationHappiness() {
+    override fun showPopulationHappiness() {
         when (orcPopulationHappiness) {
             50 -> {
                 println("Orcs are content.")
@@ -57,7 +57,7 @@ class OrcishArmy: Army {
         }
     }
 
-    internal fun influencePopulationsHappiness(amount: Int, isPositive: Boolean) {
+    override fun influencePopulationsHappiness(amount: Int, isPositive: Boolean) {
         if (isPositive) {
             if (orcPopulationHappiness < 50) {
                 orcPopulationHappiness += amount
@@ -70,7 +70,7 @@ class OrcishArmy: Army {
         }
     }
 
-    internal fun changeTheStateOfTheShinies(amount: Double, isAnIncrease: Boolean) {
+    override fun changeTheStateOfTheTreasury(amount: Double, isAnIncrease: Boolean) {
         if (isAnIncrease) {
             pileOfShinies += amount
         } else {
@@ -78,7 +78,7 @@ class OrcishArmy: Army {
         }
     }
 
-    internal fun showAvailableUnitsWithCost() {
+    override fun showAvailableUnitsWithCost() {
         Thread.sleep(500)
         println("1. " + OrcishUnit.ORCS_WITH_STOLEN_SHIELDS.name + " for 4 gold pieces each.")
         Thread.sleep(500)
@@ -94,10 +94,10 @@ class OrcishArmy: Army {
         Thread.sleep(500)
         println("7. " + OrcishUnit.SHAMANS.name + " for 12 gold pieces each.")
         val chosenOption = readLine()
-        trainAnOrcishUnit(chosenOption)
+        trainAUnit(chosenOption)
     }
 
-    private fun trainAnOrcishUnit(chosenOption: String?) {
+    override fun trainAUnit(chosenOption: String?) {
         when (chosenOption) {
             "1" -> { if (checkIfFundsAreSufficient(4.0)) {
                 if (orcs.containsKey(OrcishUnit.ORCS_WITH_STOLEN_SHIELDS)) {
@@ -105,7 +105,7 @@ class OrcishArmy: Army {
                 } else {
                     orcs[OrcishUnit.ORCS_WITH_STOLEN_SHIELDS] = 1
                 }
-                changeTheStateOfTheShinies(4.0, false)
+                changeTheStateOfTheTreasury(4.0, false)
                 confirmThePurchase(OrcishUnit.ORCS_WITH_STOLEN_SHIELDS)
             } else {
                 declineThePurchase(OrcishUnit.ORCS_WITH_STOLEN_SHIELDS)
@@ -116,7 +116,7 @@ class OrcishArmy: Army {
                 } else {
                     orcs[OrcishUnit.CLUBBERS] = 1
                 }
-                changeTheStateOfTheShinies(3.0, false)
+                changeTheStateOfTheTreasury(3.0, false)
                 confirmThePurchase(OrcishUnit.CLUBBERS)
             } else {
                 declineThePurchase(OrcishUnit.CLUBBERS)
@@ -127,7 +127,7 @@ class OrcishArmy: Army {
                 } else {
                     orcs[OrcishUnit.BIG_AXES] = 1
                 }
-                changeTheStateOfTheShinies(6.0, false)
+                changeTheStateOfTheTreasury(6.0, false)
                 confirmThePurchase(OrcishUnit.BIG_AXES)
             } else {
                 declineThePurchase(OrcishUnit.BIG_AXES)
@@ -138,7 +138,7 @@ class OrcishArmy: Army {
                 } else {
                     orcs[OrcishUnit.ROCK_LOBBERS] = 1
                 }
-                changeTheStateOfTheShinies(7.0, false)
+                changeTheStateOfTheTreasury(7.0, false)
                 confirmThePurchase(OrcishUnit.ROCK_LOBBERS)
             } else {
                 declineThePurchase(OrcishUnit.ROCK_LOBBERS)
@@ -149,7 +149,7 @@ class OrcishArmy: Army {
                 } else {
                     orcs[OrcishUnit.JAVELINERS] = 1
                 }
-                changeTheStateOfTheShinies(9.0, false)
+                changeTheStateOfTheTreasury(9.0, false)
                 confirmThePurchase(OrcishUnit.JAVELINERS)
             } else {
                 declineThePurchase(OrcishUnit.JAVELINERS)
@@ -160,7 +160,7 @@ class OrcishArmy: Army {
                 } else {
                     orcs[OrcishUnit.WOLF_RIDERS] = 1
                 }
-                changeTheStateOfTheShinies(10.0, false)
+                changeTheStateOfTheTreasury(10.0, false)
                 confirmThePurchase(OrcishUnit.WOLF_RIDERS)
             } else {
                 declineThePurchase(OrcishUnit.WOLF_RIDERS)
@@ -171,7 +171,7 @@ class OrcishArmy: Army {
                 } else {
                     orcs[OrcishUnit.SHAMANS] = 1
                 }
-                changeTheStateOfTheShinies(12.0, false)
+                changeTheStateOfTheTreasury(12.0, false)
                 confirmThePurchase(OrcishUnit.SHAMANS)
             } else {
                 declineThePurchase(OrcishUnit.SHAMANS)

@@ -26,7 +26,7 @@ internal class TrainingField: Logistics {
                 "3" -> elves.showTheTroops()
             } }
             "2" -> displayTrainingOptions(chosenFaction)
-            "3" -> {  }
+            "3" -> displayRecommendations(chosenFaction)
         }
     }
 
@@ -36,6 +36,14 @@ internal class TrainingField: Logistics {
             "1" -> { dwarves.showAvailableUnitsWithCost() }
             "2" -> { orcs.showAvailableUnitsWithCost() }
             "3" -> { elves.showAvailableUnitsWithCost() }
+        }
+    }
+
+    private fun displayRecommendations(chosenFaction: String) {
+        when (chosenFaction) {
+            "1" -> {}
+            "2" -> {}
+            "3" -> {}
         }
     }
 

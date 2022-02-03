@@ -23,19 +23,19 @@ class ElvenArmy: Army {
         elvenSupplies.put(ElvenProvisions.WINE, 4)
     }
 
-    internal fun showTheTroops() {
+    override fun showTheTroops() {
         elves.forEach { (key, value) -> println("$value of $key") }
     }
 
-    internal fun showTheSupplies() {
+    override fun showTheSupplies() {
         elvenSupplies.forEach { (key, value) -> println("$value of $key") }
     }
 
-    internal fun showTheFunds() {
+    override fun showTheFunds() {
         println("You treasury holds $emeraldStore emeralds.")
     }
 
-    internal fun showPopulationHappiness() {
+    override fun showPopulationHappiness() {
         when (elfPopulationHappiness) {
             50 -> {
                 println("Elves are pleased.")
@@ -58,7 +58,7 @@ class ElvenArmy: Army {
         }
     }
 
-    internal fun influencePopulationsHappiness(amount: Int, isPositive: Boolean) {
+    override fun influencePopulationsHappiness(amount: Int, isPositive: Boolean) {
         if (isPositive) {
             if (elfPopulationHappiness < 50) {
                 elfPopulationHappiness += amount
@@ -71,7 +71,7 @@ class ElvenArmy: Army {
         }
     }
 
-    internal fun changeTheStateOfTheEmeraldStore(amount: Double, isAnIncrease: Boolean) {
+    override fun changeTheStateOfTheTreasury(amount: Double, isAnIncrease: Boolean) {
         if (isAnIncrease) {
             emeraldStore += amount
         } else {
@@ -79,7 +79,7 @@ class ElvenArmy: Army {
         }
     }
 
-    internal fun showAvailableUnitsWithCost() {
+    override fun showAvailableUnitsWithCost() {
         Thread.sleep(500)
         println("1. " + ElvenUnit.WARDANCERS.name + " for 4 gold pieces each.")
         Thread.sleep(500)
@@ -95,10 +95,10 @@ class ElvenArmy: Army {
         Thread.sleep(500)
         println("7. " + ElvenUnit.PRIESTS_OF_HALIEL.name + " for 20 gold pieces each.")
         val chosenOption = readLine()
-        trainAnElvenUnit(chosenOption)
+        trainAUnit(chosenOption)
     }
 
-    private fun trainAnElvenUnit(chosenOption: String?) {
+    override fun trainAUnit(chosenOption: String?) {
         when (chosenOption) {
             "1" -> { if (checkIfFundsAreSufficient(4.0)) {
                 if (elves.containsKey(ElvenUnit.WARDANCERS)) {
@@ -106,7 +106,7 @@ class ElvenArmy: Army {
                 } else {
                     elves[ElvenUnit.WARDANCERS] = 1
                 }
-                changeTheStateOfTheEmeraldStore(4.0, false)
+                changeTheStateOfTheTreasury(4.0, false)
                 confirmThePurchase(ElvenUnit.WARDANCERS)
             } else {
                 declineThePurchase(ElvenUnit.WARDANCERS)
@@ -117,7 +117,7 @@ class ElvenArmy: Army {
                 } else {
                     elves[ElvenUnit.SWAN_PIKEMEN] = 1
                 }
-                changeTheStateOfTheEmeraldStore(5.0, false)
+                changeTheStateOfTheTreasury(5.0, false)
                 confirmThePurchase(ElvenUnit.SWAN_PIKEMEN)
             } else {
                 declineThePurchase(ElvenUnit.SWAN_PIKEMEN)
@@ -128,7 +128,7 @@ class ElvenArmy: Army {
                 } else {
                     elves[ElvenUnit.HUNTERS] = 1
                 }
-                changeTheStateOfTheEmeraldStore(10.0, false)
+                changeTheStateOfTheTreasury(10.0, false)
                 confirmThePurchase(ElvenUnit.HUNTERS)
             } else {
                 declineThePurchase(ElvenUnit.HUNTERS)
@@ -139,7 +139,7 @@ class ElvenArmy: Army {
                 } else {
                     elves[ElvenUnit.LONGBOWS] = 1
                 }
-                changeTheStateOfTheEmeraldStore(12.0, false)
+                changeTheStateOfTheTreasury(12.0, false)
                 confirmThePurchase(ElvenUnit.LONGBOWS)
             } else {
                 declineThePurchase(ElvenUnit.LONGBOWS)
@@ -150,7 +150,7 @@ class ElvenArmy: Army {
                 } else {
                     elves[ElvenUnit.ARCANE_BOWS] = 1
                 }
-                changeTheStateOfTheEmeraldStore(14.0, false)
+                changeTheStateOfTheTreasury(14.0, false)
                 confirmThePurchase(ElvenUnit.ARCANE_BOWS)
             } else {
                 declineThePurchase(ElvenUnit.ARCANE_BOWS)
@@ -161,7 +161,7 @@ class ElvenArmy: Army {
                 } else {
                     elves[ElvenUnit.SWAN_KNIGHTS] = 1
                 }
-                changeTheStateOfTheEmeraldStore(15.0, false)
+                changeTheStateOfTheTreasury(15.0, false)
                 confirmThePurchase(ElvenUnit.SWAN_KNIGHTS)
             } else {
                 declineThePurchase(ElvenUnit.SWAN_KNIGHTS)
@@ -172,7 +172,7 @@ class ElvenArmy: Army {
                 } else {
                     elves[ElvenUnit.PRIESTS_OF_HALIEL] = 1
                 }
-                changeTheStateOfTheEmeraldStore(20.0, false)
+                changeTheStateOfTheTreasury(20.0, false)
                 confirmThePurchase(ElvenUnit.PRIESTS_OF_HALIEL)
             } else {
                 declineThePurchase(ElvenUnit.PRIESTS_OF_HALIEL)

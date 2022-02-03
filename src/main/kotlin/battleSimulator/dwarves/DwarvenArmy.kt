@@ -28,19 +28,19 @@ class DwarvenArmy: Army {
         dwarvenSupplies.put(DwarvenProvisions.BEER, 4)
     }
 
-    internal fun showTheTroops() {
+    override fun showTheTroops() {
         dwarves.forEach { (key, value) -> println("$value of $key") }
     }
 
-    internal fun showTheSupplies() {
+    override fun showTheSupplies() {
         dwarvenSupplies.forEach { (key, value) -> println("$value of $key") }
     }
 
-    internal fun showTheFunds() {
+    override fun showTheFunds() {
         println("You treasury holds $armyFunds gold pieces.")
     }
 
-    internal fun showPopulationHappiness() {
+    override fun showPopulationHappiness() {
         when (dwarfPopulationHappiness) {
             50 -> {
                 println("Dwarves are happy.")
@@ -63,7 +63,7 @@ class DwarvenArmy: Army {
         }
     }
 
-    internal fun influencePopulationsHappiness(amount: Int, isPositive: Boolean) {
+    override fun influencePopulationsHappiness(amount: Int, isPositive: Boolean) {
         if (isPositive) {
             if (dwarfPopulationHappiness < 50) {
                 dwarfPopulationHappiness += amount
@@ -76,7 +76,7 @@ class DwarvenArmy: Army {
         }
     }
 
-    internal fun changeTheStateOfTheTreasury(amount: Double, isAnIncrease: Boolean) {
+    override fun changeTheStateOfTheTreasury(amount: Double, isAnIncrease: Boolean) {
         if (isAnIncrease) {
             armyFunds += amount
         } else {
@@ -84,7 +84,7 @@ class DwarvenArmy: Army {
         }
     }
 
-    internal fun showAvailableUnitsWithCost() {
+    override fun showAvailableUnitsWithCost() {
         Thread.sleep(500)
         println("1. " + DwarvenUnit.SHIELDBEARERS.name + " for 8 gold pieces each.")
         Thread.sleep(500)
@@ -100,10 +100,10 @@ class DwarvenArmy: Army {
         Thread.sleep(500)
         println("7. " + DwarvenUnit.RUNE_PRIESTS.name + " for 20 gold pieces each.")
         val chosenOption = readLine()
-        trainADwarvenUnit(chosenOption)
+        trainAUnit(chosenOption)
     }
 
-    private fun trainADwarvenUnit(chosenOption: String?) {
+    override fun trainAUnit(chosenOption: String?) {
         when (chosenOption) {
             "1" -> { if (checkIfFundsAreSufficient(8.0)) {
                         if (dwarves.containsKey(DwarvenUnit.SHIELDBEARERS)) {
@@ -196,4 +196,5 @@ class DwarvenArmy: Army {
     override fun confirmThePurchase(chosenUnit: Unit) {
         println("A unit of $chosenUnit was added to the army!")
     }
+
 }
