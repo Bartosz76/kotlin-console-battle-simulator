@@ -190,4 +190,8 @@ class OrcishArmy: Army {
     override fun confirmThePurchase(chosenUnit: Unit) {
         println("A unit of $chosenUnit was added to the army!")
     }
+
+    override fun recommendATrainingOption(army: Map<Unit, Int>) {
+        TODO("Not yet implemented")
+    }
 }

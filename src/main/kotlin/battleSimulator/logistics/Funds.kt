@@ -67,7 +67,7 @@ internal class Funds: Logistics {
                      dwarves.influencePopulationsHappiness(5, false) }
             "2" -> { orcs.changeTheStateOfTheTreasury(taxesCollected, false)
                      orcs.influencePopulationsHappiness(5, false) }
-            "3" -> { elves.changeTheStateOfTheEmeraldStore(taxesCollected, false)
+            "3" -> { elves.changeTheStateOfTheTreasury(taxesCollected, false)
                      elves.influencePopulationsHappiness(5, false) }
         }
     }
@@ -86,7 +86,7 @@ internal class Funds: Logistics {
                      dwarves.influencePopulationsHappiness(5, !wasThwarted) }
             "2" -> { orcs.changeTheStateOfTheTreasury(raidResult, !wasThwarted)
                      orcs.influencePopulationsHappiness(5, !wasThwarted) }
-            "3" -> { elves.changeTheStateOfTheEmeraldStore(raidResult, !wasThwarted)
+            "3" -> { elves.changeTheStateOfTheTreasury(raidResult, !wasThwarted)
                      elves.influencePopulationsHappiness(5, !wasThwarted) }
         }
     }
