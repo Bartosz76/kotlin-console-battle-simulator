@@ -24,5 +24,5 @@ interface Army {
 
     fun confirmThePurchase(chosenUnit: Unit)
 
-    fun recommendATrainingOption(army: Map<Unit, Int>)
+    fun recommendATrainingOption()
 }

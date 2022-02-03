@@ -192,7 +192,7 @@ class ElvenArmy: Army {
         println("A unit of $chosenUnit was added to the army!")
     }
 
-    override fun recommendATrainingOption(army: Map<Unit, Int>) {
+    override fun recommendATrainingOption() {
         TODO("Not yet implemented")
     }
 }

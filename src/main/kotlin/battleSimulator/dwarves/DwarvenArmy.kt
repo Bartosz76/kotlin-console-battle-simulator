@@ -197,8 +197,16 @@ class DwarvenArmy: Army {
         println("A unit of $chosenUnit was added to the army!")
     }
 
-    override fun recommendATrainingOption(army: Map<Unit, Int>) {
-        TODO("Not yet implemented")
+    override fun recommendATrainingOption() {
+        if (!dwarves.containsKey(DwarvenUnit.SHIELDBEARERS)) {
+                println("Your throng could use some shieldbearers!")
+        }
+        if (!dwarves.containsKey(DwarvenUnit.BOAR_RIDERS)) {
+                println("Your troops could use support from fast moving boar riders.")
+        }
+        if (!dwarves.containsKey(DwarvenUnit.RUNE_PRIESTS)) {
+                println("Your warriors' morale would raise if they had any rune priests amongst them.")
+        }
+        println("More damage dealing axethrowers or crossbows is always a good choice.")
     }
-
 }
