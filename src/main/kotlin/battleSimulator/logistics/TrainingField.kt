@@ -42,8 +42,8 @@ internal class TrainingField: Logistics {
     private fun displayRecommendations(chosenFaction: String) {
         when (chosenFaction) {
             "1" -> { dwarves.recommendATrainingOption() }
-            "2" -> {}
-            "3" -> {}
+            "2" -> { orcs.recommendATrainingOption() }
+            "3" -> { elves.recommendATrainingOption() }
         }
     }
 

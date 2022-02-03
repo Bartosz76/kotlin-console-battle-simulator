@@ -1,5 +1,6 @@
 package battleSimulator.orcs
 
+import battleSimulator.dwarves.DwarvenUnit
 import battleSimulator.logistics.Army
 import battleSimulator.logistics.Unit
 
@@ -192,6 +193,15 @@ class OrcishArmy: Army {
     }
 
     override fun recommendATrainingOption() {
-        TODO("Not yet implemented")
+        if (!orcs.containsKey(OrcishUnit.ORCS_WITH_STOLEN_SHIELDS)) {
+            println("Your horde could use some shields!")
+        }
+        if (!orcs.containsKey(OrcishUnit.WOLF_RIDERS)) {
+            println("Your warriors could use some help from their wolf riding brethren!")
+        }
+        if (!orcs.containsKey(OrcishUnit.SHAMANS)) {
+            println("Your orcs would fight better with shamans nearby.")
+        }
+        println("More damage dealing rock lobbers or javeliners is always a good choice.")
     }
 }

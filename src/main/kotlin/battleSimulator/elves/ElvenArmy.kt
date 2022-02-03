@@ -193,6 +193,15 @@ class ElvenArmy: Army {
     }
 
     override fun recommendATrainingOption() {
-        TODO("Not yet implemented")
+        if (!elves.containsKey(ElvenUnit.WARDANCERS)) {
+            println("Your archers could use some melee support from wardancers.")
+        }
+        if (!elves.containsKey(ElvenUnit.SWAN_KNIGHTS)) {
+            println("Your army would be more flexible with some heavy cavalry of swan knights amongst them.")
+        }
+        if (!elves.containsKey(ElvenUnit.PRIESTS_OF_HALIEL)) {
+            println("Your warriors' morale would rise with divine support provided by priests of Haliel.")
+        }
+        println("More damage dealing hunters or longbows is always a good choice.")
     }
 }
