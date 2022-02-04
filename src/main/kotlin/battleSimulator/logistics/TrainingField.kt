@@ -46,8 +46,4 @@ internal class TrainingField: Logistics {
             "3" -> { elves.recommendATrainingOption() }
         }
     }
-
-    override fun printInitialPanelLine() {
-        println("You can now:")
-    }
 }

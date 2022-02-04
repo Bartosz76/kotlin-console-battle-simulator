@@ -107,8 +107,4 @@ internal class Funds: Logistics {
         }
         return wasThwarted
     }
-
-    override fun printInitialPanelLine() {
-        println("You can now:")
-    }
 }
