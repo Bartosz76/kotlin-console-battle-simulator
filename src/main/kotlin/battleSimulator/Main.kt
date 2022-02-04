@@ -1,5 +1,6 @@
 import battleSimulator.dwarves.DwarvenArmy
 import battleSimulator.elves.ElvenArmy
+import battleSimulator.logistics.Engagement
 import battleSimulator.logistics.Funds
 import battleSimulator.logistics.TrainingField
 import battleSimulator.orcs.OrcishArmy
@@ -10,6 +11,7 @@ private val elves: ElvenArmy = ElvenArmy()
 private val orcs: OrcishArmy = OrcishArmy()
 private val funds: Funds = Funds()
 private val training: TrainingField = TrainingField()
+private val engagement: Engagement = Engagement()
 
 fun main() {
 
@@ -114,7 +116,7 @@ internal fun selectArmyAction(chosenArmyAction: String?, chosenFaction: String) 
         "2" -> inspectProvisions()
         "3" -> funds.displayFundsPanel(chosenFaction)
         "4" -> training.displayUnitTrainingPanel(chosenFaction)
-        "5" -> displayEngagementOptions()
+        "5" -> engagement.displayEngagementOptions()
     }
 }
 
@@ -133,9 +135,3 @@ internal fun inspectProvisions() {
         "3" -> elves.showTheSupplies()
     }
 }
-
-fun displayEngagementOptions() {
-
-}
-
-
