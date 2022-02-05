@@ -1,6 +1,5 @@
 package battleSimulator.orcs
 
-import battleSimulator.dwarves.DwarvenUnit
 import battleSimulator.logistics.Army
 import battleSimulator.logistics.Unit
 
@@ -10,17 +9,17 @@ class OrcishArmy: Army {
     private var orcPopulationHappiness: Int = 50
     private var orcs = mutableMapOf<OrcishUnit, Int>()
     init {
-        orcs.put(OrcishUnit.ORCS_WITH_STOLEN_SHIELDS, 3)
-        orcs.put(OrcishUnit.CLUBBERS, 3)
-        orcs.put(OrcishUnit.BIG_AXES, 2)
-        orcs.put(OrcishUnit.SHAMANS, 1)
+        orcs[OrcishUnit.ORCS_WITH_STOLEN_SHIELDS] = 3
+        orcs[OrcishUnit.CLUBBERS] = 3
+        orcs[OrcishUnit.BIG_AXES] = 2
+        orcs[OrcishUnit.SHAMANS] = 1
     }
 
     private var orcishSupplies = mutableMapOf<OrcishProvisions, Int>()
     init {
-        orcishSupplies.put(OrcishProvisions.WORMS, 2)
-        orcishSupplies.put(OrcishProvisions.FLOUR_CAKE, 2)
-        orcishSupplies.put(OrcishProvisions.STOLEN_ALCOHOL, 4)
+        orcishSupplies[OrcishProvisions.WORMS] = 2
+        orcishSupplies[OrcishProvisions.FLOUR_CAKE] = 2
+        orcishSupplies[OrcishProvisions.STOLEN_ALCOHOL] = 4
     }
 
     override fun showTheTroops() {

@@ -9,17 +9,17 @@ class ElvenArmy: Army {
     private var elfPopulationHappiness: Int = 50
     private var elves = mutableMapOf<ElvenUnit, Int>()
     init {
-        elves.put(ElvenUnit.WARDANCERS, 2)
-        elves.put(ElvenUnit.HUNTERS, 4)
-        elves.put(ElvenUnit.LONGBOWS, 3)
-        elves.put(ElvenUnit.PRIESTS_OF_HALIEL, 1)
+        elves[ElvenUnit.WARDANCERS] = 2
+        elves[ElvenUnit.HUNTERS] = 4
+        elves[ElvenUnit.LONGBOWS] = 3
+        elves[ElvenUnit.PRIESTS_OF_HALIEL] = 1
     }
 
     private var elvenSupplies = mutableMapOf<ElvenProvisions, Int>()
     init {
-        elvenSupplies.put(ElvenProvisions.FOREST_MUSHROOMS, 2)
-        elvenSupplies.put(ElvenProvisions.CAKE, 2)
-        elvenSupplies.put(ElvenProvisions.WINE, 4)
+        elvenSupplies[ElvenProvisions.FOREST_MUSHROOMS] = 2
+        elvenSupplies[ElvenProvisions.CAKE] = 2
+        elvenSupplies[ElvenProvisions.WINE] = 4
     }
 
     override fun showTheTroops() {

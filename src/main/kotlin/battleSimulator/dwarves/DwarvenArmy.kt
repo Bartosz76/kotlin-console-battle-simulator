@@ -15,17 +15,17 @@ class DwarvenArmy: Army {
      */
     private var dwarves = mutableMapOf<DwarvenUnit, Int>()
     init {
-        dwarves.put(DwarvenUnit.SHIELDBEARERS, 4)
-        dwarves.put(DwarvenUnit.AXEMEN, 2)
-        dwarves.put(DwarvenUnit.CROSSBOWMEN, 3)
-        dwarves.put(DwarvenUnit.RUNE_PRIESTS, 1)
+        dwarves[DwarvenUnit.SHIELDBEARERS] = 4
+        dwarves[DwarvenUnit.AXEMEN] = 2
+        dwarves[DwarvenUnit.CROSSBOWMEN] = 3
+        dwarves[DwarvenUnit.RUNE_PRIESTS] = 1
     }
 
     private var dwarvenSupplies = mutableMapOf<DwarvenProvisions, Int>()
     init {
-        dwarvenSupplies.put(DwarvenProvisions.CAVE_MUSHROOMS, 2)
-        dwarvenSupplies.put(DwarvenProvisions.BREAD, 2)
-        dwarvenSupplies.put(DwarvenProvisions.BEER, 4)
+        dwarvenSupplies[DwarvenProvisions.CAVE_MUSHROOMS] = 2
+        dwarvenSupplies[DwarvenProvisions.BREAD] = 2
+        dwarvenSupplies[DwarvenProvisions.BEER] = 4
     }
 
     override fun showTheTroops() {
