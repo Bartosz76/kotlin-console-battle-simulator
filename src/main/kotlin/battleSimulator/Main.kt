@@ -116,7 +116,7 @@ internal fun selectArmyAction(chosenArmyAction: String?, chosenFaction: String) 
         "2" -> inspectProvisions()
         "3" -> funds.displayFundsPanel(chosenFaction)
         "4" -> training.displayUnitTrainingPanel(chosenFaction)
-        "5" -> engagement.displayEngagementOptions()
+        "5" -> engagement.displayEngagementOptions(chosenFaction)
     }
 }
 
