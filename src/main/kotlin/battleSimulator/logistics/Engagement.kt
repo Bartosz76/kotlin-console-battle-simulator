@@ -17,8 +17,7 @@ class Engagement: Logistics {
         Thread.sleep(500)
         println("2. Send scouts.")
         Thread.sleep(500)
-        var chosenOption = readLine()
-        when (chosenOption) {
+        when (readLine()) {
             "1" -> {}
             "2" -> { displayScoutingOptions(chosenFaction) }
         }
@@ -31,7 +30,9 @@ class Engagement: Logistics {
         Thread.sleep(500)
         println("2. Hinder the enemy's provisions.")
         Thread.sleep(500)
+        when (readLine()) {
+            "1" -> {}
+            "2" -> {}
+        }
     }
-
-
 }

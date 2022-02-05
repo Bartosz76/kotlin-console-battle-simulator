@@ -18,8 +18,7 @@ internal class TrainingField: Logistics {
         println("2. See training options.")
         Thread.sleep(500)
         println("3. See recommendations.")
-        var chosenOption = readLine()
-        when (chosenOption) {
+        when (readLine()) {
             "1" -> { when (chosenFaction) {
                 "1" -> dwarves.showTheTroops()
                 "2" -> orcs.showTheTroops()

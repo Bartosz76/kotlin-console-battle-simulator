@@ -1,6 +1,5 @@
 package battleSimulator.elves
 
-import battleSimulator.dwarves.DwarvenUnit
 import battleSimulator.logistics.Army
 import battleSimulator.logistics.Unit
 
@@ -94,8 +93,7 @@ class ElvenArmy: Army {
         println("6. " + ElvenUnit.SWAN_KNIGHTS.name + " for 15 gold pieces each.")
         Thread.sleep(500)
         println("7. " + ElvenUnit.PRIESTS_OF_HALIEL.name + " for 20 gold pieces each.")
-        val chosenOption = readLine()
-        trainAUnit(chosenOption)
+        trainAUnit(readLine())
     }
 
     override fun trainAUnit(chosenOption: String?) {

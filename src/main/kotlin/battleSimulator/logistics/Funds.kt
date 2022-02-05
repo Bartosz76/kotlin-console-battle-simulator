@@ -19,8 +19,7 @@ internal class Funds: Logistics {
         println("2. Collect taxes.")
         Thread.sleep(500)
         println("3. Raid the enemy.")
-        val chosenOption = readLine()
-        when (chosenOption) {
+        when (readLine()) {
             "1" -> inspectTheFunds(chosenFaction)
             "2" -> displayTaxesPanel(chosenFaction)
             "3" -> raidTheEnemy(chosenFaction)
@@ -43,8 +42,7 @@ internal class Funds: Logistics {
         println("2. Collect taxes.")
         Thread.sleep(500)
         println("3. Raid the enemy's supply lines.")
-        val chosenOption = readLine()
-        when (chosenOption) {
+        when (readLine()) {
             "1" -> showPopulationsHappiness(chosenFaction)
             "2" -> collectTaxes(chosenFaction)
             "3" -> raidTheEnemy(chosenFaction)
