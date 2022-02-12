@@ -2,7 +2,7 @@ package battleSimulator.orcs
 
 import battleSimulator.logistics.Unit
 
-enum class OrcishUnit(var power: Int, var defence: Int, var number: Int, var healthPool: Int): Unit {
+internal enum class OrcishUnit(var power: Int, var defence: Int, var number: Int, var healthPool: Int): Unit {
 
     ORCS_WITH_STOLEN_SHIELDS(70, 150, 120, 200),
     CLUBBERS(120, 30, 140, 180),

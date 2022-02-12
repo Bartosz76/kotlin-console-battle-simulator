@@ -3,7 +3,7 @@ package battleSimulator.dwarves
 import battleSimulator.logistics.Army
 import battleSimulator.logistics.Unit
 
-class DwarvenArmy: Army {
+internal class DwarvenArmy: Army {
 
     private var armyFunds: Double = 100.00
     private var dwarfPopulationHappiness: Int = 50

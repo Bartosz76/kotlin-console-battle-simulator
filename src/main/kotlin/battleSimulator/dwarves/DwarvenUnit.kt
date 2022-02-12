@@ -2,7 +2,7 @@ package battleSimulator.dwarves
 
 import battleSimulator.logistics.Unit
 
-enum class DwarvenUnit(var power: Int, var defence: Int, var number: Int, var healthPool: Int): Unit {
+internal enum class DwarvenUnit(var power: Int, var defence: Int, var number: Int, var healthPool: Int): Unit {
 
     SHIELDBEARERS(60, 200, 80, 300),
     AXEMEN(100, 100, 80, 200),

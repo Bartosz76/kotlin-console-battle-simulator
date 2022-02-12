@@ -4,7 +4,7 @@ import battleSimulator.dwarves.DwarvenArmy
 import battleSimulator.elves.ElvenArmy
 import battleSimulator.orcs.OrcishArmy
 
-class Engagement: Logistics {
+internal class Engagement: Logistics {
 
     private var dwarves: DwarvenArmy = DwarvenArmy()
     private var orcs: OrcishArmy = OrcishArmy()

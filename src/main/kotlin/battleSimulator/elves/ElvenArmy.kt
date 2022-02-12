@@ -3,7 +3,7 @@ package battleSimulator.elves
 import battleSimulator.logistics.Army
 import battleSimulator.logistics.Unit
 
-class ElvenArmy: Army {
+internal class ElvenArmy: Army {
 
     private var emeraldStore: Double = 100.00
     private var elfPopulationHappiness: Int = 50

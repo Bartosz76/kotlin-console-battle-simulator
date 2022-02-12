@@ -3,7 +3,7 @@ package battleSimulator.orcs
 import battleSimulator.logistics.Army
 import battleSimulator.logistics.Unit
 
-class OrcishArmy: Army {
+internal class OrcishArmy: Army {
 
     private var pileOfShinies: Double = 100.00
     private var orcPopulationHappiness: Int = 50
