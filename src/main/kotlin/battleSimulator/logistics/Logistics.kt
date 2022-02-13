@@ -1,6 +1,6 @@
 package battleSimulator.logistics
 
-interface Logistics {
+sealed interface Logistics {
 
     fun printInitialPanelLine() {
         println("You can now:")

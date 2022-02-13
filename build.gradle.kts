@@ -27,3 +27,7 @@ tasks.withType<KotlinCompile> {
 application {
     mainClass.set("Main")
 }
+val compileKotlin: KotlinCompile by tasks
+compileKotlin.kotlinOptions {
+    languageVersion = "1.6"
+}
