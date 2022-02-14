@@ -1,17 +1,20 @@
 import battleSimulator.dwarves.DwarvenArmy
 import battleSimulator.elves.ElvenArmy
+import battleSimulator.logistics.EnemyGenerator
 import battleSimulator.logistics.Engagement
 import battleSimulator.logistics.Funds
 import battleSimulator.logistics.TrainingField
 import battleSimulator.orcs.OrcishArmy
 
 private var chosenFaction: String = ""
+private var enemyFaction: String = ""
 private val dwarves: DwarvenArmy = DwarvenArmy()
 private val elves: ElvenArmy = ElvenArmy()
 private val orcs: OrcishArmy = OrcishArmy()
 private val funds: Funds = Funds()
 private val training: TrainingField = TrainingField()
 private val engagement: Engagement = Engagement()
+private val enemyGenerator: EnemyGenerator = EnemyGenerator()
 
 fun main() {
 
@@ -62,12 +65,16 @@ internal fun showMenu(playerName: String?) {
 internal fun provideInfoAboutTheChosenSide(chosenSide: String?) {
     when (chosenSide) {
         "1" -> { println(dwarvesData())
-                 chosenFaction = "1" }
+                 chosenFaction = "1"
+                 enemyFaction = "2" }
         "2" -> { println(orcsData())
-                 chosenFaction = "2"}
+                 chosenFaction = "2"
+                 enemyFaction = "3" }
         "3" -> { println(elvesData())
-                 chosenFaction = "3"}
+                 chosenFaction = "3"
+                 enemyFaction = "1" }
     }
+    enemyGenerator.generateTheEnemy(enemyFaction)
 }
 
 //Below three functions are defined as "single expression functions". It's a substitute for defining such a method
