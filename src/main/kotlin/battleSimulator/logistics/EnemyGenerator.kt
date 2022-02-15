@@ -48,16 +48,17 @@ class EnemyGenerator {
     }
 
     internal fun randomlyGenerateTroops(enemyFaction: String) {
-        when (enemyFaction) {
-            "1" -> {}
-            "2" -> {}
-            "3" -> {}
+        val generatedUnit = drawAUnit(enemyFaction)
+        if (enemyArmy.containsKey(generatedUnit)) {
+            enemyArmy[generatedUnit] = (enemyArmy.getValue(generatedUnit) + 1)
+        } else {
+            enemyArmy[generatedUnit] = 1
         }
     }
 
-    private fun drawAUnit(troopsPool: List<Unit>): Unit {
+    private fun drawAUnit(enemyFaction: String): Unit {
         val randomIndex = Random.nextInt(0, 5)
-        return troopsPool[randomIndex]
+        return provideTheTroopsPool(enemyFaction)[randomIndex]
     }
 
     private fun provideTheTroopsPool(enemyFaction: String): MutableList<Unit> {
