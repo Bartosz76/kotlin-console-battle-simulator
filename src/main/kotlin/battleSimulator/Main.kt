@@ -15,22 +15,24 @@ private val funds: Funds = Funds()
 private val training: TrainingField = TrainingField()
 private val engagement: Engagement = Engagement()
 private val enemyGenerator: EnemyGenerator = EnemyGenerator()
+private var isGameOn: Boolean = true
 
 fun main() {
 
-    acquireThePlayersName()
-    val playerName = readLine()
-    greetThePlayer(playerName)
+    while (isGameOn) {
+        acquireThePlayersName()
+        val playerName = readLine()
+        greetThePlayer(playerName)
 
-    showMenu(playerName)
-    val chosenSide = readLine()
-    provideInfoAboutTheChosenSide(chosenSide)
+        showMenu(playerName)
+        val chosenSide = readLine()
+        provideInfoAboutTheChosenSide(chosenSide)
 
-    Thread.sleep(3000)
-    showArmyMenu()
-    val chosenArmyAction = readLine()
-    selectArmyAction(chosenArmyAction, chosenFaction)
-
+        Thread.sleep(3000)
+        showArmyMenu()
+        val chosenArmyAction = readLine()
+        selectArmyAction(chosenArmyAction, chosenFaction, playerName)
+    }
 }
 
 internal fun acquireThePlayersName() {
@@ -115,15 +117,19 @@ internal fun showArmyMenu() {
     println("4. Train more units.")
     Thread.sleep(500)
     println("5. Engage the enemy.")
+    Thread.sleep(500)
+    println("6. Exit the game.")
 }
 
-internal fun selectArmyAction(chosenArmyAction: String?, chosenFaction: String) {
+internal fun selectArmyAction(chosenArmyAction: String?, chosenFaction: String, playerName: String?) {
     when (chosenArmyAction) {
         "1" -> inspectTheArmy()
         "2" -> inspectProvisions()
         "3" -> funds.displayFundsPanel(chosenFaction, enemyFaction)
         "4" -> training.displayUnitTrainingPanel(chosenFaction)
-        "5" -> engagement.displayEngagementOptions(chosenFaction) }
+        "5" -> engagement.displayEngagementOptions(chosenFaction)
+        "6" -> { println("See you later, $playerName!")
+                 isGameOn = false } }
 }
 
 internal fun inspectTheArmy() {
