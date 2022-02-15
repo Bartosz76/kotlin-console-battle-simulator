@@ -45,4 +45,40 @@ class EnemyGenerator {
         enemyArmy[ElvenUnit.SWAN_KNIGHTS] = 4
         enemyArmy[ElvenUnit.PRIESTS_OF_HALIEL] = 3
     }
+
+    internal fun randomlyGenerateTroops(enemyFaction: String) {
+        when (enemyFaction) {
+            "1" -> {}
+            "2" -> {}
+            "3" -> {}
+        }
+    }
+
+    private fun provideTheTroopsPool(enemyFaction: String): MutableList<Unit> {
+        var troopsPool = mutableListOf<Unit>()
+        when (enemyFaction) {
+            "1" -> { troopsPool.add(DwarvenUnit.SHIELDBEARERS)
+                     troopsPool.add(DwarvenUnit.AXEMEN)
+                     troopsPool.add(DwarvenUnit.HAMMERERS)
+                     troopsPool.add(DwarvenUnit.AXETHROWERS)
+                     troopsPool.add(DwarvenUnit.CROSSBOWMEN)
+                     troopsPool.add(DwarvenUnit.BOAR_RIDERS)
+                     troopsPool.add(DwarvenUnit.RUNE_PRIESTS) }
+            "2" -> { troopsPool.add(OrcishUnit.ORCS_WITH_STOLEN_SHIELDS)
+                     troopsPool.add(OrcishUnit.CLUBBERS)
+                     troopsPool.add(OrcishUnit.BIG_AXES)
+                     troopsPool.add(OrcishUnit.ROCK_LOBBERS)
+                     troopsPool.add(OrcishUnit.JAVELINERS)
+                     troopsPool.add(OrcishUnit.WOLF_RIDERS)
+                     troopsPool.add(OrcishUnit.SHAMANS) }
+            "3" -> { troopsPool.add(ElvenUnit.WARDANCERS)
+                     troopsPool.add(ElvenUnit.SWAN_PIKEMEN)
+                     troopsPool.add(ElvenUnit.HUNTERS)
+                     troopsPool.add(ElvenUnit.LONGBOWS)
+                     troopsPool.add(ElvenUnit.ARCANE_BOWS)
+                     troopsPool.add(ElvenUnit.SWAN_KNIGHTS)
+                     troopsPool.add(ElvenUnit.PRIESTS_OF_HALIEL) }
+        }
+        return troopsPool
+    }
 }
