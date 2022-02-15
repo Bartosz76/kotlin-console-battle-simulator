@@ -57,7 +57,7 @@ class EnemyGenerator {
 
     private fun drawAUnit(troopsPool: List<Unit>): Unit {
         val randomIndex = Random.nextInt(0, 5)
-        return troopsPool.get(randomIndex)
+        return troopsPool[randomIndex]
     }
 
     private fun provideTheTroopsPool(enemyFaction: String): MutableList<Unit> {
