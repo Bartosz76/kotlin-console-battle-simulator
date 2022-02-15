@@ -121,10 +121,9 @@ internal fun selectArmyAction(chosenArmyAction: String?, chosenFaction: String) 
     when (chosenArmyAction) {
         "1" -> inspectTheArmy()
         "2" -> inspectProvisions()
-        "3" -> funds.displayFundsPanel(chosenFaction)
+        "3" -> funds.displayFundsPanel(chosenFaction, enemyFaction)
         "4" -> training.displayUnitTrainingPanel(chosenFaction)
-        "5" -> engagement.displayEngagementOptions(chosenFaction)
-    }
+        "5" -> engagement.displayEngagementOptions(chosenFaction) }
 }
 
 internal fun inspectTheArmy() {

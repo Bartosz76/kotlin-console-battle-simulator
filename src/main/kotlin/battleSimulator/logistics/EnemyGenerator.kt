@@ -7,7 +7,7 @@ import kotlin.random.Random
 
 class EnemyGenerator {
 
-    private var enemyArmy = mutableMapOf<Unit, Int>()
+    var enemyArmy = mutableMapOf<Unit, Int>()
 
     internal fun generateTheEnemy(enemyFaction: String) {
         when (enemyFaction) {

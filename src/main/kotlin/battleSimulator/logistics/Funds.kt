@@ -10,8 +10,9 @@ internal class Funds: Logistics {
     private var dwarves: DwarvenArmy = DwarvenArmy()
     private var elves: ElvenArmy = ElvenArmy()
     private var orcs: OrcishArmy = OrcishArmy()
+    private var enemyGenerator: EnemyGenerator = EnemyGenerator()
 
-    internal fun displayFundsPanel(chosenFaction: String) {
+    internal fun displayFundsPanel(chosenFaction: String, enemyFaction: String) {
         printInitialPanelLine()
         Thread.sleep(500)
         println("1. Inspect your funds.")
@@ -21,8 +22,8 @@ internal class Funds: Logistics {
         println("3. Raid the enemy.")
         when (readLine()) {
             "1" -> inspectTheFunds(chosenFaction)
-            "2" -> displayTaxesPanel(chosenFaction)
-            "3" -> raidTheEnemy(chosenFaction)
+            "2" -> displayTaxesPanel(chosenFaction, enemyFaction)
+            "3" -> raidTheEnemy(chosenFaction, enemyFaction)
         }
     }
 
@@ -34,7 +35,7 @@ internal class Funds: Logistics {
         }
     }
 
-    private fun displayTaxesPanel(chosenFaction: String) {
+    private fun displayTaxesPanel(chosenFaction: String, enemyFaction: String) {
         printInitialPanelLine()
         Thread.sleep(500)
         println("1. Show population's happiness.")
@@ -45,7 +46,7 @@ internal class Funds: Logistics {
         when (readLine()) {
             "1" -> showPopulationsHappiness(chosenFaction)
             "2" -> collectTaxes(chosenFaction)
-            "3" -> raidTheEnemy(chosenFaction)
+            "3" -> raidTheEnemy(chosenFaction, enemyFaction)
         }
     }
 
@@ -74,9 +75,9 @@ internal class Funds: Logistics {
         return Random.nextDouble(5.0, 15.0)
     }
 
-    private fun raidTheEnemy(chosenFaction: String) {
+    private fun raidTheEnemy(chosenFaction: String, enemyFaction: String) {
         val wasThwarted = seeIfTheRaidWasSuccessful()
-        val raidResult: Double = estimateTheAmountOfLootGathered(wasThwarted)
+        val raidResult: Double = estimateTheAmountOfLootGathered(wasThwarted, enemyFaction)
             .also { if (!wasThwarted) { println("Managed to loot $it!") }
                     else { println("The raid was thwarted and you lost $it!") } }
         when (chosenFaction) {
@@ -89,10 +90,12 @@ internal class Funds: Logistics {
         }
     }
 
-    private fun estimateTheAmountOfLootGathered(wasThwarted: Boolean): Double {
+    private fun estimateTheAmountOfLootGathered(wasThwarted: Boolean, enemyFaction: String): Double {
         return if (!wasThwarted) {
             Random.nextDouble(3.0, 25.0)
         } else {
+            println("The enemy grows weary and strengthen their forces...")
+            enemyGenerator.randomlyGenerateTroops(enemyFaction)
             Random.nextDouble(3.0, 10.0)
         }
     }
