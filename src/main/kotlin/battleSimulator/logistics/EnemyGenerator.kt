@@ -3,6 +3,7 @@ package battleSimulator.logistics
 import battleSimulator.dwarves.DwarvenUnit
 import battleSimulator.elves.ElvenUnit
 import battleSimulator.orcs.OrcishUnit
+import kotlin.random.Random
 
 class EnemyGenerator {
 
@@ -54,8 +55,13 @@ class EnemyGenerator {
         }
     }
 
+    private fun drawAUnit(troopsPool: List<Unit>): Unit {
+        val randomIndex = Random.nextInt(0, 5)
+        return troopsPool.get(randomIndex)
+    }
+
     private fun provideTheTroopsPool(enemyFaction: String): MutableList<Unit> {
-        var troopsPool = mutableListOf<Unit>()
+        val troopsPool = mutableListOf<Unit>()
         when (enemyFaction) {
             "1" -> { troopsPool.add(DwarvenUnit.SHIELDBEARERS)
                      troopsPool.add(DwarvenUnit.AXEMEN)
