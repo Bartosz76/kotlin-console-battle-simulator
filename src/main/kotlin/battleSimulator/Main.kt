@@ -1,20 +1,25 @@
 import battleSimulator.dwarves.DwarvenArmy
 import battleSimulator.elves.ElvenArmy
-import battleSimulator.logistics.EnemyGenerator
+import battleSimulator.logistics.*
 import battleSimulator.logistics.Engagement
 import battleSimulator.logistics.Funds
+import battleSimulator.logistics.Supplies
 import battleSimulator.logistics.TrainingField
 import battleSimulator.orcs.OrcishArmy
 
 private var chosenFaction: String = ""
 private var enemyFaction: String = ""
+
 private val dwarves: DwarvenArmy = DwarvenArmy()
 private val elves: ElvenArmy = ElvenArmy()
 private val orcs: OrcishArmy = OrcishArmy()
+
 private val funds: Funds = Funds()
 private val training: TrainingField = TrainingField()
 private val engagement: Engagement = Engagement()
 private val enemyGenerator: EnemyGenerator = EnemyGenerator()
+private val supplies: Supplies = Supplies()
+
 private var isGameOn: Boolean = true
 
 fun main() {
@@ -27,7 +32,7 @@ fun main() {
         val chosenSide = readLine()
         provideInfoAboutTheChosenSide(chosenSide)
         Thread.sleep(3000)
-    
+
     while (isGameOn) {
         showArmyMenu()
         val chosenArmyAction = readLine()
@@ -112,13 +117,15 @@ internal fun showArmyMenu() {
     Thread.sleep(500)
     println("2. Inspect provisions.")
     Thread.sleep(500)
-    println("3. Funds.")
+    println("3. Manage funds.")
     Thread.sleep(500)
-    println("4. Train more units.")
+    println("4. Manage provisions.")
     Thread.sleep(500)
-    println("5. Engage the enemy.")
+    println("5. Train more units.")
     Thread.sleep(500)
-    println("6. Exit the game.")
+    println("6. Engage the enemy.")
+    Thread.sleep(500)
+    println("7. Exit the game.")
 }
 
 internal fun selectArmyAction(chosenArmyAction: String?, chosenFaction: String, playerName: String?) {
@@ -126,9 +133,10 @@ internal fun selectArmyAction(chosenArmyAction: String?, chosenFaction: String, 
         "1" -> inspectTheArmy()
         "2" -> inspectProvisions()
         "3" -> funds.displayFundsPanel(chosenFaction, enemyFaction)
-        "4" -> training.displayUnitTrainingPanel(chosenFaction)
-        "5" -> engagement.displayEngagementOptions(chosenFaction)
-        "6" -> { println("See you later, $playerName!")
+        "4" -> {supplies.displaySuppliesPanel()}
+        "5" -> training.displayUnitTrainingPanel(chosenFaction)
+        "6" -> engagement.displayEngagementOptions(chosenFaction)
+        "7" -> { println("See you later, $playerName!")
                  isGameOn = false } }
 }
 
