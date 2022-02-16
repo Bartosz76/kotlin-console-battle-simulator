@@ -19,7 +19,6 @@ private var isGameOn: Boolean = true
 
 fun main() {
 
-    while (isGameOn) {
         acquireThePlayersName()
         val playerName = readLine()
         greetThePlayer(playerName)
@@ -27,8 +26,9 @@ fun main() {
         showMenu(playerName)
         val chosenSide = readLine()
         provideInfoAboutTheChosenSide(chosenSide)
-
         Thread.sleep(3000)
+    
+    while (isGameOn) {
         showArmyMenu()
         val chosenArmyAction = readLine()
         selectArmyAction(chosenArmyAction, chosenFaction, playerName)
