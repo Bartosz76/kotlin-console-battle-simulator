@@ -4,7 +4,7 @@ import battleSimulator.dwarves.DwarvenArmy
 import battleSimulator.elves.ElvenArmy
 import battleSimulator.orcs.OrcishArmy
 
-internal class TrainingField: Logistics {
+internal class TrainingFieldPanel: Logistics {
 
     private var dwarves: DwarvenArmy = DwarvenArmy()
     private var elves: ElvenArmy = ElvenArmy()

@@ -1,10 +1,10 @@
 import battleSimulator.dwarves.DwarvenArmy
 import battleSimulator.elves.ElvenArmy
 import battleSimulator.logistics.*
-import battleSimulator.logistics.Engagement
-import battleSimulator.logistics.Funds
-import battleSimulator.logistics.Supplies
-import battleSimulator.logistics.TrainingField
+import battleSimulator.logistics.EngagementPanel
+import battleSimulator.logistics.FundsPanel
+import battleSimulator.logistics.SuppliesPanel
+import battleSimulator.logistics.TrainingFieldPanel
 import battleSimulator.orcs.OrcishArmy
 
 private var chosenFaction: String = ""
@@ -14,11 +14,11 @@ private val dwarves: DwarvenArmy = DwarvenArmy()
 private val elves: ElvenArmy = ElvenArmy()
 private val orcs: OrcishArmy = OrcishArmy()
 
-private val funds: Funds = Funds()
-private val training: TrainingField = TrainingField()
-private val engagement: Engagement = Engagement()
+private val fundsPanel: FundsPanel = FundsPanel()
+private val trainingFieldPanel: TrainingFieldPanel = TrainingFieldPanel()
+private val engagementPanel: EngagementPanel = EngagementPanel()
 private val enemyGenerator: EnemyGenerator = EnemyGenerator()
-private val supplies: Supplies = Supplies()
+private val suppliesPanel: SuppliesPanel = SuppliesPanel()
 
 private var isGameOn: Boolean = true
 
@@ -132,10 +132,10 @@ internal fun selectArmyAction(chosenArmyAction: String?, chosenFaction: String, 
     when (chosenArmyAction) {
         "1" -> inspectTheArmy()
         "2" -> inspectProvisions()
-        "3" -> funds.displayFundsPanel(chosenFaction, enemyFaction)
-        "4" -> {supplies.displaySuppliesPanel()}
-        "5" -> training.displayUnitTrainingPanel(chosenFaction)
-        "6" -> engagement.displayEngagementOptions(chosenFaction)
+        "3" -> fundsPanel.displayFundsPanel(chosenFaction, enemyFaction)
+        "4" -> {suppliesPanel.displaySuppliesPanel(chosenFaction)}
+        "5" -> trainingFieldPanel.displayUnitTrainingPanel(chosenFaction)
+        "6" -> engagementPanel.displayEngagementOptions(chosenFaction)
         "7" -> { println("See you later, $playerName!")
                  isGameOn = false } }
 }

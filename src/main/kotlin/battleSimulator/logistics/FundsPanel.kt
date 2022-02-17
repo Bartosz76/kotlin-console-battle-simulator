@@ -5,7 +5,7 @@ import battleSimulator.elves.ElvenArmy
 import battleSimulator.orcs.OrcishArmy
 import kotlin.random.Random
 
-internal class Funds: Logistics {
+internal class FundsPanel: Logistics {
 
     private var dwarves: DwarvenArmy = DwarvenArmy()
     private var elves: ElvenArmy = ElvenArmy()
