@@ -1,13 +1,17 @@
 package battleSimulator.logistics
 
+import battleSimulator.dwarves.DwarvenProvisions
 import battleSimulator.dwarves.DwarvenUnit
+import battleSimulator.elves.ElvenProvisions
 import battleSimulator.elves.ElvenUnit
+import battleSimulator.orcs.OrcishProvisions
 import battleSimulator.orcs.OrcishUnit
 import kotlin.random.Random
 
 class EnemyGenerator {
 
     var enemyArmy = mutableMapOf<Unit, Int>()
+    var enemyProvisions = mutableMapOf<Provisions, Int>()
 
     internal fun generateTheEnemy(enemyFaction: String) {
         when (enemyFaction) {
@@ -15,6 +19,7 @@ class EnemyGenerator {
             "2" -> { generateOrcishArmy() }
             "3" -> { generateElvenArmy() }
         }
+        generateProvisions(enemyFaction)
     }
 
     private fun generateDwarvenArmy() {
@@ -87,5 +92,28 @@ class EnemyGenerator {
                      troopsPool.add(ElvenUnit.PRIESTS_OF_HALIEL) }
         }
         return troopsPool
+    }
+
+    private fun generateProvisions(enemyFaction: String) {
+        when (enemyFaction) {
+            "1" -> { enemyProvisions[DwarvenProvisions.CAVE_MUSHROOMS] = 5
+                     enemyProvisions[DwarvenProvisions.BREAD] = 5
+                     enemyProvisions[DwarvenProvisions.DEEP_VEGETABLES] = 4
+                     enemyProvisions[DwarvenProvisions.DRIED_MOSS] = 5
+                     enemyProvisions[DwarvenProvisions.BEER] = 6
+            }
+            "2" -> { enemyProvisions[OrcishProvisions.WORMS] = 5
+                     enemyProvisions[OrcishProvisions.FLOUR_CAKE] = 5
+                     enemyProvisions[OrcishProvisions.ROOTS] = 4
+                     enemyProvisions[OrcishProvisions.SCAVANGED_VEGETABLES] = 5
+                     enemyProvisions[OrcishProvisions.STOLEN_ALCOHOL] = 6
+            }
+            "3" -> { enemyProvisions[ElvenProvisions.FOREST_MUSHROOMS] = 5
+                     enemyProvisions[ElvenProvisions.CAKE] = 5
+                     enemyProvisions[ElvenProvisions.DRIED_FRUITS] = 4
+                     enemyProvisions[ElvenProvisions.VEGETABLES] = 5
+                     enemyProvisions[ElvenProvisions.WINE] = 6
+            }
+        }
     }
 }

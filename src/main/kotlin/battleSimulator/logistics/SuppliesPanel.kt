@@ -26,8 +26,14 @@ internal class SuppliesPanel: Logistics {
                 "3" -> elves.showTheSupplies()
             }}
             "2" -> {}
-            "3" -> {}
+            "3" -> { spoilTheEnemyProvisions() }
             }
         }
     }
+
+    internal fun spoilTheEnemyProvisions() {
+
+    }
+
+
 
