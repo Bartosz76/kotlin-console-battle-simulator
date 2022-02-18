@@ -8,7 +8,7 @@ import battleSimulator.orcs.OrcishProvisions
 import battleSimulator.orcs.OrcishUnit
 import kotlin.random.Random
 
-class EnemyGenerator {
+object EnemyGenerator {
 
     var enemyArmy = mutableMapOf<Unit, Int>()
     var enemyProvisions = mutableMapOf<Provisions, Int>()

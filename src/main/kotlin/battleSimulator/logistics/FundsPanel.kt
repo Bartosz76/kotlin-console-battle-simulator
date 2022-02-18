@@ -10,7 +10,7 @@ internal class FundsPanel: Logistics {
     private var dwarves: DwarvenArmy = DwarvenArmy()
     private var elves: ElvenArmy = ElvenArmy()
     private var orcs: OrcishArmy = OrcishArmy()
-    private var enemyGenerator: EnemyGenerator = EnemyGenerator()
+    private var enemyGenerator: EnemyGenerator = EnemyGenerator
 
     internal fun displayFundsPanel(chosenFaction: String, enemyFaction: String) {
         printInitialPanelLine()

@@ -17,7 +17,7 @@ private val orcs: OrcishArmy = OrcishArmy()
 private val fundsPanel: FundsPanel = FundsPanel()
 private val trainingFieldPanel: TrainingFieldPanel = TrainingFieldPanel()
 private val engagementPanel: EngagementPanel = EngagementPanel()
-private val enemyGenerator: EnemyGenerator = EnemyGenerator()
+private val enemyGenerator: EnemyGenerator = EnemyGenerator
 private val suppliesPanel: SuppliesPanel = SuppliesPanel()
 
 private var isGameOn: Boolean = true
