@@ -28,14 +28,11 @@ internal class SuppliesPanel: Logistics {
                 "3" -> elves.showTheSupplies()
             }}
             "2" -> {}
-            "3" -> {
-                println(enemyGenerator.enemyProvisions.toString())
-                spoilTheEnemyProvisions()
-                println(enemyGenerator.enemyProvisions.toString()) }
+            "3" -> { spoilTheEnemyProvisions(chosenFaction) }
             }
         }
 
-    private fun spoilTheEnemyProvisions() {
+    private fun spoilTheEnemyProvisions(chosenFaction: String) {
         if (seeIfTheSpoilingWasSuccessful()) {
            val randomizeIndex = Random.nextInt(0, enemyGenerator.enemyProvisions.size)
            val randomEntry: MutableMap.MutableEntry<Provisions, Int> = enemyGenerator.enemyProvisions.entries.elementAt(randomizeIndex)
@@ -45,8 +42,9 @@ internal class SuppliesPanel: Logistics {
             } else {
                 enemyGenerator.enemyProvisions[provisions] = enemyGenerator.enemyProvisions[provisions]!!.minus(1)
             }
+            println("You have managed to spoil a ration of $provisions!")
         } else {
-            println("lol fail")
+            estimateTheAmountOfFundsLost(chosenFaction)
         }
     }
 
@@ -58,7 +56,25 @@ internal class SuppliesPanel: Logistics {
         }
         return wasSuccessful
     }
-}
+
+    private fun estimateTheAmountOfFundsLost(chosenFaction: String) {
+            val fundsLost = Random.nextDouble(3.0, 10.0)
+            var currencyType = ""
+            when (chosenFaction) {
+                "1" -> { dwarves.changeTheStateOfTheTreasury(fundsLost, false)
+                         currencyType = "gold"
+                }
+                "2" -> { orcs.changeTheStateOfTheTreasury(fundsLost, false)
+                         currencyType = "shinies"
+                }
+                "3" -> { elves.changeTheStateOfTheTreasury(fundsLost, false)
+                         currencyType = "emeralds"
+                }
+            }
+        println("You have failed to harm the enemy's provision and you've lost $fundsLost $currencyType in the attempt!")
+        }
+    }
+
 
 
 
