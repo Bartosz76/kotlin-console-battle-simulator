@@ -58,7 +58,11 @@ internal class SuppliesPanel: Logistics {
     }
 
     private fun estimateTheAmountOfFundsLost(chosenFaction: String) {
-            val fundsLost = Random.nextDouble(3.0, 10.0)
+            var fundsLost = Random.nextDouble(3.0, 10.0)
+            if (checkIfCriticalFailure()) {
+                var critical = fundsLost.worsenTheResult()
+                fundsLost = critical
+            }
             var currencyType = ""
             when (chosenFaction) {
                 "1" -> { dwarves.changeTheStateOfTheTreasury(fundsLost, false)
@@ -73,6 +77,16 @@ internal class SuppliesPanel: Logistics {
             }
         println("You have failed to harm the enemy's provision and you've lost $fundsLost $currencyType in the attempt!")
         }
+
+    private fun checkIfCriticalFailure(): Boolean {
+        println("The attempt was critically bad!")
+        return Random.nextInt(1, 2) == 1
+    }
+
+    private fun Double.worsenTheResult(): Double {
+        return this * 2
+    }
+
     }
 
 
